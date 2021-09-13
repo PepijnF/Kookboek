@@ -2,11 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AbstractionLayer;
+using DataLayer;
+using LogicLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace Kookboek
@@ -24,6 +29,11 @@ namespace Kookboek
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            // Dall
+            services.AddSingleton<IRecipeDal, RecipeDal>();
+            
+            // Logic
+            services.AddSingleton<ISaveRecipe, SaveRecipe>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

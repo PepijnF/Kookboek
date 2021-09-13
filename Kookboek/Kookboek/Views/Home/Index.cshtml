@@ -1,20 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model RecipeModel;
 
-<div class="">
-    <label>Title</label>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
-    </div>
-    <label>Ingredients</label>
-    <div class="input-group">
-        <textarea class="form-control" placeholder="Ingredients" aria-label="Ingredients"></textarea>
-    </div>
-    <label>Preparation</label>
-    <div class="input-group">
-        <textarea class="form-control" placeholder="Preparation" aria-label="Preparation"></textarea>
-    </div>
-    <br/>
-    <button type="button" class="btn btn-primary btn-lg" onclick="">Submit</button>
-</div>
+@{
+    using (Html.BeginForm("PostRecipe", "Home", FormMethod.Post, new{ enctype="multipart/form-data"}))
+    {
+        @Html.LabelFor(m => m.Image)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Image, new { @class="form-control" , type="file", accept="image/*"})
+        </div>
+        @Html.LabelFor(m => m.Title)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Title, new { @class="form-control" })
+        </div>
+        @Html.LabelFor(m => m.Ingredients)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.Ingredients, new { @class="form-control" })
+        </div>
+        @Html.LabelFor(m => m.Preparation)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.Preparation, new { @class="form-control" })
+        </div>
+        <input type="submit" value="Submit recipe" class="btn btn-primary btn-lg"/>
+    }
+}

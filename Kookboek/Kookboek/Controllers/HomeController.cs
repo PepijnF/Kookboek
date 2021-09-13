@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AbstractionLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Kookboek.Models;
@@ -12,10 +13,12 @@ namespace Kookboek.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ISaveRecipe _saveRecipe;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ISaveRecipe saveRecipe)
         {
             _logger = logger;
+            _saveRecipe = saveRecipe;
         }
 
         public IActionResult Index()
@@ -28,9 +31,11 @@ namespace Kookboek.Controllers
             return View();
         }
 
-        public void RecipePost()
+        [HttpPost]
+        public IActionResult PostRecipe(RecipeModel recipeModel)
         {
-            Console.WriteLine();
+            _saveRecipe.SendRecipeToDb(recipeModel.ConvertToRecipe());
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
