@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using AbstractionLayer;
 using NUnit.Framework;
 using DataLayer;
 
@@ -14,6 +15,8 @@ namespace TestingLayer
         [Test]
         public async Task Test1()
         {
+            IRecipeDal recipeDal = new RecipeDal();
+            await recipeDal.Get();
         }
     }
 }

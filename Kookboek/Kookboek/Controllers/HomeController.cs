@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AbstractionLayer;
@@ -31,10 +32,38 @@ namespace Kookboek.Controllers
             return View();
         }
 
+        public async Task<IActionResult> ShowRecipe()
+        {
+            Recipe recipe = await _saveRecipe.GetRecipeFromDb();
+            RecipeModel recipeModel = new RecipeModel();
+            recipeModel.ImageBase64 = System.Convert.ToBase64String(recipe.Image);
+
+            return View(recipeModel);
+        }
+
         [HttpPost]
         public IActionResult PostRecipe(RecipeModel recipeModel)
         {
-            _saveRecipe.SendRecipeToDb(recipeModel.ConvertToRecipe());
+            // IFormFile to Byte[]
+            long length = recipeModel.Image.Length;
+
+            if (length < 0)
+            {
+                // Bad image
+            }
+
+            using Stream fileStream = recipeModel.Image.OpenReadStream();
+            byte[] byteImage = new byte[length];
+            fileStream.Read(byteImage, 0, (int) recipeModel.Image.Length);
+            
+            _saveRecipe.SendRecipeToDb(new Recipe()
+            {
+                Image = byteImage,
+                Ingredients = recipeModel.Ingredients,
+                Preparation = recipeModel.Preparation,
+                Title = recipeModel.Title
+            });
+            
             return View("Index");
         }
 

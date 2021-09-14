@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using AbstractionLayer;
 
 namespace LogicLayer
@@ -14,6 +15,11 @@ namespace LogicLayer
         public void SendRecipeToDb(Recipe recipe)
         {
             _recipeDal.Insert(recipe);
+        }
+
+        public async Task<Recipe> GetRecipeFromDb()
+        {
+            return await _recipeDal.Get();
         }
     }
 }

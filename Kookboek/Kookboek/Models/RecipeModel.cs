@@ -9,6 +9,8 @@ namespace Kookboek.Models
     {
         [DisplayName("Image")]
         public IFormFile Image { get; set; }
+        
+        public string ImageBase64 { get; set; }
         [Required]
         [DisplayName("Title")]
         public string Title { get; set; }
