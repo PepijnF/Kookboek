@@ -7,13 +7,11 @@ namespace DataLayer
 {
     public class RecipeDal: IRecipeDal
     {
-        // TODO hide connString
-        private static string connString = "Host=localhost;Username=appuser;Password=1234;Database=kookboek";
 
         public async Task Insert(Recipe recipe)
         {
-            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
-            await conn.OpenAsync();
+            NpgsqlConnection conn = await Connection.OpenConnection();
+            
             string stringImageId;
             await using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO recipeImages (id, image) VALUES (@id, @image)"))
             {
@@ -23,7 +21,7 @@ namespace DataLayer
                 // TODO add image
                 cmd.Parameters.AddWithValue("image", recipe.Image);
                 await cmd.ExecuteNonQueryAsync();
-            };
+            }
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO recipes (id,imageId,title,ingredients,preparation) VALUES (@id,@imageId,@title,@ingredients,@prep)"))
             {
@@ -34,14 +32,13 @@ namespace DataLayer
                 cmd.Parameters.AddWithValue("ingredients", recipe.Ingredients);
                 cmd.Parameters.AddWithValue("prep", recipe.Preparation);
                 await cmd.ExecuteNonQueryAsync();
-            };
-            conn.Close();
+            }
+            await conn.CloseAsync();
         }
 
         public async Task<Recipe> Get()
         {
-            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
-            await conn.OpenAsync();
+            NpgsqlConnection conn = await Connection.OpenConnection();
             Recipe recipe;
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Title, Ingredients, Preparation, image FROM recipes INNER JOIN recipeImages rI on rI.id = recipes.ImageId;"))
@@ -59,9 +56,10 @@ namespace DataLayer
                     };
                 }
 
-                return recipe;
+                
             }
-            
+            await conn.CloseAsync();
+            return recipe;
         }
     }
 }

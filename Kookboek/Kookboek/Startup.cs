@@ -33,7 +33,7 @@ namespace Kookboek
             services.AddSingleton<IRecipeDal, RecipeDal>();
             
             // Logic
-            services.AddSingleton<ISaveRecipe, SaveRecipe>();
+            services.AddSingleton<IRecipeLogic, RecipeLogicLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

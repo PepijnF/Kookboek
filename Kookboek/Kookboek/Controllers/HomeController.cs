@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using AbstractionLayer;
 using Microsoft.AspNetCore.Mvc;
@@ -14,12 +10,12 @@ namespace Kookboek.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ISaveRecipe _saveRecipe;
+        private readonly IRecipeLogic _recipeLogic;
 
-        public HomeController(ILogger<HomeController> logger, ISaveRecipe saveRecipe)
+        public HomeController(ILogger<HomeController> logger, IRecipeLogic recipeLogic)
         {
             _logger = logger;
-            _saveRecipe = saveRecipe;
+            _recipeLogic = recipeLogic;
         }
 
         public IActionResult Index()
@@ -34,9 +30,11 @@ namespace Kookboek.Controllers
 
         public async Task<IActionResult> ShowRecipe()
         {
-            Recipe recipe = await _saveRecipe.GetRecipeFromDb();
-            RecipeModel recipeModel = new RecipeModel();
-            recipeModel.ImageBase64 = System.Convert.ToBase64String(recipe.Image);
+            Recipe recipe = await _recipeLogic.GetRecipeFromDb();
+            RecipeModel recipeModel = new RecipeModel
+            {
+                ImageBase64 = System.Convert.ToBase64String(recipe.Image)
+            };
 
             return View(recipeModel);
         }
@@ -44,27 +42,16 @@ namespace Kookboek.Controllers
         [HttpPost]
         public IActionResult PostRecipe(RecipeModel recipeModel)
         {
-            // IFormFile to Byte[]
-            long length = recipeModel.Image.Length;
-
-            if (length < 0)
+            if (recipeModel.Image.Length > 0)
             {
-                // Bad image
+                _recipeLogic.SendRecipeToDb(_recipeLogic.RecipeModelToDto(recipeModel.Image, recipeModel.Title, recipeModel.Ingredients, recipeModel.Preparation));
             }
-
-            using Stream fileStream = recipeModel.Image.OpenReadStream();
-            byte[] byteImage = new byte[length];
-            fileStream.Read(byteImage, 0, (int) recipeModel.Image.Length);
-            
-            _saveRecipe.SendRecipeToDb(new Recipe()
+            else
             {
-                Image = byteImage,
-                Ingredients = recipeModel.Ingredients,
-                Preparation = recipeModel.Preparation,
-                Title = recipeModel.Title
-            });
+                
+            }
             
-            return View("Index");
+            return RedirectToAction("ShowRecipe");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
