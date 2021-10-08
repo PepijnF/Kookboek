@@ -1,0 +1,66 @@
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+package LogicLayer {
+    class RecipeContainer {
+        + FindAllByUserId(string userId)
+        + FindById(string recipeId)
+        + AddRecipe(recipe: Recipe)
+        + RemoveRecipe(recipe: Recipe)
+    }
+    
+    class Recipe {
+        + Id: string
+        + UserId: string
+        + Title: string
+        + FoodImage: FoodImage
+        + Preparations: string
+        + Ingredients: string
+        
+        + Update()
+        + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
+    }
+}
+
+package AbstractionLayer {
+    class RecipeDto{
+        + Id: string
+        + Title: string
+        + Preparations: string
+        + Ingredients: string
+    }
+    
+    interface IRecipeDal{
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+package DataLayer {
+    class RecipeDal {
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+
+RecipeDal .u.|> IRecipeDal
+RecipeContainer -r-> "*" Recipe
+
+Recipe .r.> RecipeDto : uses
+RecipeContainer .u.> RecipeDto : uses
+RecipeDal .u.> RecipeDto : uses
+
+Recipe -d-> IRecipeDal
+RecipeContainer -d-> IRecipeDal
+
+@enduml

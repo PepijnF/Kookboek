@@ -3,7 +3,7 @@ using Npgsql;
 
 namespace DataLayer
 {
-    public class Connection
+    public static class Connection
     {
         private static string connString = "Host=localhost;Username=appuser;Password=1234;Database=kookboek";
 

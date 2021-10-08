@@ -9,6 +9,7 @@
         @Html.LabelFor(m => m.Image)
         <div class="input-group mb-3">
             @Html.TextBoxFor(m => m.Image, new { @class="form-control" , type="file", accept="image/*"})
+            @Html.ValidationMessageFor(m => m.Image)
         </div>
         @Html.LabelFor(m => m.Title)
         <div class="input-group mb-3">

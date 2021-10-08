@@ -11,6 +11,7 @@ namespace Kookboek.Models
         public IFormFile Image { get; set; }
         
         public string ImageBase64 { get; set; }
+        
         [Required]
         [DisplayName("Title")]
         public string Title { get; set; }
@@ -22,16 +23,5 @@ namespace Kookboek.Models
         [Required]
         [DisplayName("Preparation")]
         public string Preparation { get; set; }
-
-        public Recipe ConvertToRecipe()
-        {
-            Recipe recipe = new Recipe()
-            {
-                Title = this.Title,
-                Ingredients = this.Ingredients,
-                Preparation = this.Preparation
-            };
-            return recipe;
-        }
     }
 }

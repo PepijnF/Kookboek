@@ -2,9 +2,10 @@ using System.Collections;
 
 namespace AbstractionLayer
 {
-    public class Recipe
+    public class RecipeDto
     {
-        public byte[] Image { get; set; }
+        public string Id { get; set; }
+        public string OwnerId { get; set; }
         public string Title { get; set; }
         public string Ingredients { get; set; }
         public string Preparation { get; set; }

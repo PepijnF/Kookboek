@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AbstractionLayer;
 using NUnit.Framework;
@@ -16,7 +17,17 @@ namespace TestingLayer
         public async Task Test1()
         {
             IRecipeDal recipeDal = new RecipeDal();
-            await recipeDal.Get();
+            List<RecipeDto> list = await recipeDal.FindAllByUserId("1");
+        }
+
+        [Test]
+        public async Task Test2()
+        {
+            IRecipeDal recipeDal = new RecipeDal();
+            await recipeDal.Save(new RecipeDto()
+            {
+                Title = "test"
+            });
         }
     }
 }

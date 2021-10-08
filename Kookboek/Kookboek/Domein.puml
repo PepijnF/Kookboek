@@ -1,0 +1,59 @@
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+class User {
+    + Id: string
+    + Username: string
+    + Recipes: Recipe[]
+    
+    + AddRecipe(recipe: Recipe)
+    + Update()
+    + User(userDto: UserDto)
+    + Save()
+    + User(username: string)
+}
+
+class UserContainer {
+    + AddUser(user: User)
+    + RemoveUser(user: User)
+    + FindByUsername(username: string)
+    + FindById(userId: string)
+}
+
+class Recipe {
+    + Id: string
+    + UserId: string
+    + Title: string
+    + FoodImage: FoodImage
+    + Preparations: string
+    + Ingredients: string
+    
+    + Update()
+    + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
+}
+
+class RecipeContainer {
+    + AddRecipe(recipe: Recipe)
+    + RemoveRecipe(recipe: Recipe)
+}
+
+class FoodImage {
+    + Id: string
+    + Image: byte[]
+    + RecipeId: string
+    
+    + Update()
+    + Image(imageDto: ImageDto)
+}
+UserContainer --> "*" User : Users
+RecipeContainer --> "*" Recipe : Recipes
+User "1" --> "*" Recipe
+Recipe "1" --> "1" FoodImage
+@enduml

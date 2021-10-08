@@ -1,0 +1,19 @@
+@model UserModel
+
+@{
+    using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.Username)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Username)
+            @Html.ValidationMessageFor(m => m.Username)
+        </div>
+        @Html.LabelFor(m => m.Password)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <input type="submit" value="Log In" class="btn btn-primary btn-lg"/>
+    }
+}
+

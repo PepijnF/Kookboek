@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AbstractionLayer;
 using Npgsql;
@@ -7,59 +8,105 @@ namespace DataLayer
 {
     public class RecipeDal: IRecipeDal
     {
+        
+        private static string connString = "Host=localhost;Username=appuser;Password=1234;Database=kookboek";
 
-        public async Task Insert(Recipe recipe)
+        /// <summary>
+        /// CREATE PROCEDURE SaveRecipe(recipeId varchar(255), imageId varchar(255), title varchar(255), ingredients text, preparation text, ownerId varchar(255))
+        ///LANGUAGE plpgsql
+        ///AS $$
+        ///BEGIN
+        ///    IF EXISTS(SELECT id FROM recipes WHERE id = recipeId) THEN
+        ///    UPDATE recipes SET ImageId = imageid, Title = title, Ingredients = ingredients, Preparation = preparation WHERE id = recipeId;
+        ///ELSE
+        ///    INSERT INTO recipes (id,imageId,title,ingredients,preparation,ownerid) VALUES (recipeId,imageId,title,ingredients,preparation,ownerId);
+        ///end if;
+        ///end $$;
+        /// </summary>
+        /// <param name="recipeDto"></param>
+        ///
+        // TODO FINISH EVERYTHING
+        public async Task Save(RecipeDto recipeDto)
         {
-            NpgsqlConnection conn = await Connection.OpenConnection();
-            
-            string stringImageId;
-            await using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO recipeImages (id, image) VALUES (@id, @image)"))
-            {
-                cmd.Connection = conn;
-                stringImageId = Guid.NewGuid().ToString();
-                cmd.Parameters.AddWithValue("id", stringImageId);
-                // TODO add image
-                cmd.Parameters.AddWithValue("image", recipe.Image);
-                await cmd.ExecuteNonQueryAsync();
-            }
+            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await conn.OpenAsync();
 
-            await using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO recipes (id,imageId,title,ingredients,preparation) VALUES (@id,@imageId,@title,@ingredients,@prep)"))
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("CALL SaveRecipe(@recipeId, @title, @ingredients, @preparation, @ownerId)"))
             {
                 cmd.Connection = conn;
-                cmd.Parameters.AddWithValue("id", Guid.NewGuid());
-                cmd.Parameters.AddWithValue("imageId", stringImageId);
-                cmd.Parameters.AddWithValue("title", recipe.Title);
-                cmd.Parameters.AddWithValue("ingredients", recipe.Ingredients);
-                cmd.Parameters.AddWithValue("prep", recipe.Preparation);
+                cmd.Parameters.AddWithValue("recipeId", recipeDto.Id);
+                cmd.Parameters.AddWithValue("title", recipeDto.Title);
+                cmd.Parameters.AddWithValue("ingredients", recipeDto.Ingredients);
+                cmd.Parameters.AddWithValue("prep", recipeDto.Preparation);
+                cmd.Parameters.AddWithValue("ownerId", recipeDto.OwnerId);
                 await cmd.ExecuteNonQueryAsync();
             }
             await conn.CloseAsync();
         }
 
-        public async Task<Recipe> Get()
+        public async Task<RecipeDto> FindById(string recipeId)
         {
-            NpgsqlConnection conn = await Connection.OpenConnection();
-            Recipe recipe;
+            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await conn.OpenAsync();
+            RecipeDto recipeDto = new RecipeDto();
 
-            await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT Title, Ingredients, Preparation, image FROM recipes INNER JOIN recipeImages rI on rI.id = recipes.ImageId;"))
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM recipes WHERE id = @recipeId"))
             {
                 cmd.Connection = conn;
-                await using (NpgsqlDataReader npgsqlDataReader = await cmd.ExecuteReaderAsync())
-                {
-                    npgsqlDataReader.Read();
-                    recipe = new Recipe()
-                    {
-                        Image = (byte[])npgsqlDataReader.GetValue(3),
-                        Title = npgsqlDataReader.GetString(0),
-                        Ingredients = npgsqlDataReader.GetString(1),
-                        Preparation = npgsqlDataReader.GetString(2)
-                    };
-                }
-
+                cmd.Parameters.AddWithValue("recipeId", recipeId);
+                await cmd.ExecuteReaderAsync();
                 
+                
+                await using (NpgsqlDataReader npgsqlDataReader = cmd.ExecuteReader())
+                {
+                    while (npgsqlDataReader.Read())
+                    {
+                        recipeDto = new RecipeDto()
+                        {
+                            Id = npgsqlDataReader.GetString(0),
+                            Title = npgsqlDataReader.GetString(1),
+                            Ingredients = npgsqlDataReader.GetString(2),
+                            Preparation = npgsqlDataReader.GetString(3),
+                            OwnerId = npgsqlDataReader.GetString(4)
+                        };
+                    }
+                }
+            }
+
+            return recipeDto;
+        }
+
+        public async Task<List<RecipeDto>> FindAllByUserId(string userId)
+        {
+            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await conn.OpenAsync();
+            List<RecipeDto> recipeDtos = new List<RecipeDto>();
+
+            await using (NpgsqlCommand cmd = new NpgsqlCommand(@"SELECT recipes.id,recipes.title, recipes.Preparation, recipes.Ingredients, recipes.ownerid FROM users 
+                                                                            INNER JOIN recipes ON users.id = recipes.OwnerId
+                                                                            INNER JOIN recipeImages ON recipes.id = recipeImages.recipeId
+                                                                            WHERE Users.id = @userid;"))
+            {
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("userid", userId);
+                
+                await using (NpgsqlDataReader npgsqlDataReader = cmd.ExecuteReader())
+                {
+                    while (npgsqlDataReader.Read())
+                    {
+                        recipeDtos.Add(new RecipeDto()
+                        {
+                            Id = npgsqlDataReader.GetString(0),
+                            Title = npgsqlDataReader.GetString(1),
+                            Ingredients = npgsqlDataReader.GetString(3),
+                            Preparation = npgsqlDataReader.GetString(2),
+                            OwnerId = npgsqlDataReader.GetString(4)
+                        });
+                    }
+                }
             }
             await conn.CloseAsync();
-            return recipe;
+            return recipeDtos;
         }
     }
 }

@@ -28,9 +28,13 @@ namespace Kookboek
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // MVC Session
+            services.AddSession();
             services.AddControllersWithViews();
             // Dall
             services.AddSingleton<IRecipeDal, RecipeDal>();
+            services.AddSingleton<IUserDal, UserDal>();
+            services.AddSingleton<IFoodImageDal, FoodImageDal>();
             
             // Logic
             services.AddSingleton<IRecipeLogic, RecipeLogicLogic>();
@@ -54,6 +58,9 @@ namespace Kookboek
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // MVC Sessions
+            app.UseSession();
 
             app.UseAuthorization();
 

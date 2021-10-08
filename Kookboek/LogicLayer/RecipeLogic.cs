@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using AbstractionLayer;
@@ -15,32 +16,32 @@ namespace LogicLayer
             _recipeDal = recipeDal;
         }
 
-        public void SendRecipeToDb(Recipe recipe)
+        public void SendRecipeToDb(byte[] image, string title, string ingredients, string preparation)
         {
-            _recipeDal.Insert(recipe);
+            RecipeDto recipeDto = new RecipeDto()
+            {
+                Title = title,
+                Ingredients = ingredients,
+                Preparation = preparation
+            };
+            
+            _recipeDal.Save(recipeDto);
         }
-        
-        public Recipe RecipeModelToDto(IFormFile file, string title, string ingredients, string preparation)
+
+        public byte[] FormFileToByteArray(IFormFile file)
         {
             long fileLength = file.Length;
             using Stream fileStream = file.OpenReadStream();
-            byte[] byteImage = new byte[fileLength];
-            fileStream.Read(byteImage, 0, (int) file.Length);
-            
-            Recipe recipe = new Recipe()
-            {
-                Image = byteImage,
-                Ingredients = ingredients,
-                Preparation = preparation,
-                Title = title
-            };
-            
-            return recipe;
+            byte[] byteFile = new byte[fileLength];
+            fileStream.Read(byteFile, 0, (int) file.Length);
+
+            return byteFile;
         }
 
-        public async Task<Recipe> GetRecipeFromDb()
+        public async Task<List<RecipeDto>> GetRecipeFromDb()
         {
-            return await _recipeDal.Get();
+            List<RecipeDto> recipeDto = await _recipeDal.FindAllByUserId("asd");
+            return recipeDto;
         }
     }
 }

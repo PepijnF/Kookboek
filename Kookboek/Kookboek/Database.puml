@@ -1,0 +1,59 @@
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+
+table( User ) {
+    primary_key(id) : varchar
+    column(username) : varchar
+    column(password) : varchar
+}
+
+table( Recipe ) {
+    primary_key(id) : varchar
+    foreign_key(user_id) : varchar
+    column(title) : varchar
+    column(ingredients) : varchar
+    column(preparations) : varchar
+}
+
+table( FoodImage ) {
+    primary_key(id) : varchar
+    foreign_key(recipe_id) : varchar
+    column(image) : bytea
+}
+
+table( CookingBook ) {
+    primary_key(id): varchar
+    column(name) : varchar
+}
+
+table(User_CookingBook){
+    foreign_key(user_id): varchar
+    foreign_key( cookingbook_id ) : varchar
+}
+
+table(Recipe_CookingBook){
+    foreign_key(recipe_id): varchar
+    foreign_key(cookingbook_id) : varchar
+}
+
+User ||--o{ Recipe
+Recipe ||--o| FoodImage
+User ||-u-o{ User_CookingBook
+CookingBook ||--|{ User_CookingBook
+Recipe ||--o{ Recipe_CookingBook
+CookingBook ||--|{ Recipe_CookingBook
+
+@enduml
