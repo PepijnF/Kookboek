@@ -3,6 +3,8 @@ skinparam linetype ortho
 skinparam shadowing true
 skinparam handwritten false
 
+!define struct(x) entity x << (S, white) >>
+
 skinparam class {
     BackgroundColor white
     BorderColor #2688d4
@@ -30,7 +32,7 @@ package LogicLayer {
 }
 
 package AbstractionLayer {
-    class RecipeDto{
+     struct(RecipeDto){
         + Id: string
         + Title: string
         + Preparations: string

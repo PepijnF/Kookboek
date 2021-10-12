@@ -1,0 +1,26 @@
+@model RecipeModel
+
+
+@{
+    using (Html.BeginForm("AddRecipe", "Recipe", FormMethod.Post, new{ enctype="multipart/form-data"}))
+    {
+        @Html.LabelFor(m => m.Image)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Image, new { @class="form-control" , type="file", accept="image/*"})
+            @Html.ValidationMessageFor(m => m.Image)
+        </div>
+        @Html.LabelFor(m => m.Title)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.Title, new { @class="form-control" })
+        </div>
+        @Html.LabelFor(m => m.Ingredients)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.Ingredients, new { @class="form-control" })
+        </div>
+        @Html.LabelFor(m => m.Preparation)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.Preparation, new { @class="form-control" })
+        </div>
+        <input type="submit" value="Submit recipe" class="btn btn-primary btn-lg"/>
+    }
+}

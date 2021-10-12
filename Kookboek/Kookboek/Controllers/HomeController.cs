@@ -20,7 +20,9 @@ namespace Kookboek.Controllers
         private readonly IUserDal _userDal;
         private readonly IRecipeDal _recipeDal;
 
-        public HomeController(ILogger<HomeController> logger, IRecipeLogic recipeLogic, IFoodImageDal foodImageDal, IUserDal userDal, IRecipeDal recipeDal)
+        private readonly UserContainer _userContainer;
+
+        public HomeController(ILogger<HomeController> logger, UserContainer userContainer,IRecipeLogic recipeLogic, IFoodImageDal foodImageDal, IUserDal userDal, IRecipeDal recipeDal)
         {
             _logger = logger;
             _recipeLogic = recipeLogic;
@@ -28,6 +30,8 @@ namespace Kookboek.Controllers
             _foodImageDal = foodImageDal;
             _userDal = userDal;
             _recipeDal = recipeDal;
+
+            _userContainer = userContainer;
         }
 
         public IActionResult Index()
@@ -36,10 +40,14 @@ namespace Kookboek.Controllers
             {
                 var session = HttpContext.Session;
                 byte[] user;
+                string userId;
                 if (session.TryGetValue("user_id", out user))
                 {
-                    Console.WriteLine(Encoding.UTF8.GetString(user, 0, user.Length));
+                    userId = Encoding.UTF8.GetString(user, 0, user.Length);
                     Console.WriteLine(session.Id);
+
+                    User userObj = _userContainer.FindById(userId);
+
                 }
                 else
                 {
@@ -97,7 +105,7 @@ namespace Kookboek.Controllers
                 };
 
                 recipe.FoodImage = foodImage;
-                recipe.Save("1", _recipeDal, _foodImageDal);
+                recipe.Save(_recipeDal, _foodImageDal);
             }
             else
             {

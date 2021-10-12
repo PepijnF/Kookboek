@@ -11,18 +11,17 @@ namespace LogicLayer
         public string Ingredients { get; set; }
         public FoodImage FoodImage { get; set; }
 
-        public void Save(string ownerId, IRecipeDal recipeDal, IFoodImageDal foodImageDal)
+        public void Save(IRecipeDal recipeDal, IFoodImageDal foodImageDal)
         {
-            FoodImage.Save(Id ,foodImageDal);
-
             recipeDal.Save(new RecipeDto()
             {
                 Id = Id,
                 Title = Title,
                 Preparation = Preparations,
                 Ingredients = Ingredients,
-                OwnerId = ownerId
-            });
+                OwnerId = UserId
+            }).GetAwaiter();
+            FoodImage.Save(foodImageDal);
         }
 
         public Recipe(RecipeDto recipeDto, IFoodImageDal foodImageDal)

@@ -38,6 +38,10 @@ namespace Kookboek
             
             // Logic
             services.AddSingleton<IRecipeLogic, RecipeLogicLogic>();
+            
+            // Containers
+            services.AddSingleton<UserContainer, UserContainer>();
+            services.AddSingleton<RecipeContainer, RecipeContainer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using AbstractionLayer;
 
@@ -9,13 +10,13 @@ namespace LogicLayer
         public string RecipeId { get; set; }
         public byte[] Image { get; set; }
 
-        public void Save(string recipeId, IFoodImageDal foodImageDal)
+        public void Save(IFoodImageDal foodImageDal)
         {
             foodImageDal.Save(new FoodImageDto()
             {
                 Id = Id,
                 Image = Image,
-                RecipeId = recipeId
+                RecipeId = RecipeId
             });
         }
         public FoodImage(FoodImageDto foodImageDto)
@@ -34,6 +35,11 @@ namespace LogicLayer
         {
             FoodImageDto foodImageDto = await foodImageDal.FindByRecipeId(recipeId);
             return new FoodImage(foodImageDto);
+        }
+
+        public string Base64Image()
+        {
+            return Convert.ToBase64String(this.Image);
         }
     }
 }

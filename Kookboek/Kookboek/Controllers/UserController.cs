@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using AbstractionLayer;
 using Kookboek.Models;
@@ -10,10 +11,12 @@ namespace Kookboek.Controllers
     public class UserController : Controller
     {
         private UserContainer _userContainer;
+        private RecipeContainer _recipeContainer;
         
-        public UserController()
+        public UserController(UserContainer userContainer, RecipeContainer recipeContainer)
         {
-            _userContainer = new UserContainer();
+            _userContainer = userContainer;
+            _recipeContainer = recipeContainer;
         }
 
         // GET
@@ -33,9 +36,15 @@ namespace Kookboek.Controllers
                 var session = HttpContext.Session;
                 session.Set("user_id", Encoding.ASCII.GetBytes(user.Id));
             }
-            // Some kind of fail statement
+            // TODO Some kind of fail statement
             
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -51,10 +60,42 @@ namespace Kookboek.Controllers
             }
             else
             {
-                // Username already exists
+                // TODO Username already exists
             }
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult ShowRecipes()
+        {
+            var session = HttpContext.Session;
+            byte[] userBytes;
+            string userId;
+            if (session.TryGetValue("user_id", out userBytes))
+            {
+                userId = Encoding.UTF8.GetString(userBytes, 0, userBytes.Length);
+            }
+            else
+            {
+                userId = "0";
+            }
+
+            List<Recipe> recipes = _recipeContainer.FindAllByUserId(userId);
+            List<RecipeModel> recipeModels = new List<RecipeModel>();
+
+            foreach (var recipe in recipes)
+            {
+               recipeModels.Add(new RecipeModel()
+               {
+                   Title = recipe.Title,
+                   Ingredients = recipe.Ingredients,
+                   Preparation = recipe.Preparations,
+                   ImageBase64 = recipe.FoodImage.Base64Image() 
+               }); 
+            }
+
+            return View(recipeModels);
         }
     }
 }

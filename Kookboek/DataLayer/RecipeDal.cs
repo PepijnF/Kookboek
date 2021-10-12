@@ -28,7 +28,7 @@ namespace DataLayer
         // TODO FINISH EVERYTHING
         public async Task Save(RecipeDto recipeDto)
         {
-            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
             await conn.OpenAsync();
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand("CALL SaveRecipe(@recipeId, @title, @ingredients, @preparation, @ownerId)"))
@@ -37,7 +37,7 @@ namespace DataLayer
                 cmd.Parameters.AddWithValue("recipeId", recipeDto.Id);
                 cmd.Parameters.AddWithValue("title", recipeDto.Title);
                 cmd.Parameters.AddWithValue("ingredients", recipeDto.Ingredients);
-                cmd.Parameters.AddWithValue("prep", recipeDto.Preparation);
+                cmd.Parameters.AddWithValue("preparation", recipeDto.Preparation);
                 cmd.Parameters.AddWithValue("ownerId", recipeDto.OwnerId);
                 await cmd.ExecuteNonQueryAsync();
             }
@@ -46,7 +46,7 @@ namespace DataLayer
 
         public async Task<RecipeDto> FindById(string recipeId)
         {
-            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
             await conn.OpenAsync();
             RecipeDto recipeDto = new RecipeDto();
 
@@ -78,7 +78,7 @@ namespace DataLayer
 
         public async Task<List<RecipeDto>> FindAllByUserId(string userId)
         {
-            await using NpgsqlConnection conn = new NpgsqlConnection(connString);
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
             await conn.OpenAsync();
             List<RecipeDto> recipeDtos = new List<RecipeDto>();
 
@@ -106,6 +106,36 @@ namespace DataLayer
                 }
             }
             await conn.CloseAsync();
+            return recipeDtos;
+        }
+
+        public async Task<List<RecipeDto>> GetAll()
+        {
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
+
+            List<RecipeDto> recipeDtos = new List<RecipeDto>();
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM recipes"))
+            {
+                cmd.Connection = conn;
+
+                await using (NpgsqlDataReader npgsqlDataReader = await cmd.ExecuteReaderAsync())
+                {
+                    while (npgsqlDataReader.Read())
+                    {
+                        recipeDtos.Add(new RecipeDto()
+                        {
+                            Id = npgsqlDataReader.GetString(0),
+                            Title = npgsqlDataReader.GetString(1),
+                            Ingredients = npgsqlDataReader.GetString(3),
+                            Preparation = npgsqlDataReader.GetString(2),
+                            OwnerId = npgsqlDataReader.GetString(4)    
+                        });
+                    }
+                }
+            }
+
+            conn.CloseAsync();
             return recipeDtos;
         }
     }

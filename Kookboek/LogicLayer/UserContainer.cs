@@ -1,13 +1,19 @@
 using System.Collections.Generic;
+using AbstractionLayer;
 
 namespace LogicLayer
 {
     public class UserContainer
     {
+        private IUserDal _userDal;
+        // TODO Check solid
+        private IRecipeDal _recipeDal;
+        private IFoodImageDal _foodImageDal;
         private List<User> _users = new List<User>();
 
         public void AddUser(User user)
         {
+            user.Save(_userDal, _recipeDal, _foodImageDal);
             _users.Add(user);
         }
 
@@ -29,6 +35,24 @@ namespace LogicLayer
         public List<User> GetAll()
         {
             return _users;
+        }
+
+        public UserContainer(IUserDal userDal, IRecipeDal recipeDal, IFoodImageDal foodImageDal, RecipeContainer recipeContainer)
+        {
+            _userDal = userDal;
+            _recipeDal = recipeDal;
+            _foodImageDal = foodImageDal;
+
+            foreach (var userDto in _userDal.GetAll().Result)
+            {
+                _users.Add(new User()
+                {
+                    Id = userDto.Id,
+                    Username = userDto.Username,
+                    Password = userDto.Password,
+                    Recipes = recipeContainer.FindAllByUserId(userDto.Id)
+                });
+            }
         }
     }
 }

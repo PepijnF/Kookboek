@@ -28,7 +28,7 @@ namespace LogicLayer
 
             foreach (var recipe in Recipes)
             {
-                recipe.Save(Id, recipeDal, foodImageDal);
+                recipe.Save(recipeDal, foodImageDal);
             }
         }
 

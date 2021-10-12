@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AbstractionLayer;
 using Npgsql;
@@ -8,7 +9,8 @@ namespace DataLayer
     {
         public async Task<UserDto> FindByUsername(string username)
         {
-            NpgsqlConnection conn = await Connection.OpenConnection();
+            NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
             UserDto user;
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand(@"SELECT * FROM users WHERE username=@username"))
@@ -33,7 +35,8 @@ namespace DataLayer
 
         public async Task<UserDto> FindById(string userId)
         {
-            NpgsqlConnection conn = await Connection.OpenConnection();
+            NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
             UserDto user;
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand(@"SELECT * FROM users WHERE id=@userId"))
@@ -72,7 +75,8 @@ namespace DataLayer
         /// <param name="userDto"></param>
         public async Task Save(UserDto userDto)
         {
-            NpgsqlConnection conn = await Connection.OpenConnection();
+            NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
 
             await using (NpgsqlCommand cmd = new NpgsqlCommand("CALL SaveUser(@id, @username, @password)"))
             {
@@ -82,6 +86,33 @@ namespace DataLayer
                 cmd.Parameters.AddWithValue("password", userDto.Password);
                 await cmd.ExecuteNonQueryAsync();
             }
+        }
+
+        public async Task<List<UserDto>> GetAll()
+        {
+            NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
+
+            List<UserDto> userDtos = new List<UserDto>();
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM users"))
+            {
+                cmd.Connection = conn;
+                await using (NpgsqlDataReader npgsqlDataReader = await cmd.ExecuteReaderAsync())
+                {
+                    while (npgsqlDataReader.Read())
+                    {
+                        userDtos.Add(new UserDto()
+                        {
+                            Id = npgsqlDataReader.GetString(0),
+                            Username = npgsqlDataReader.GetString(1),
+                            Password = npgsqlDataReader.GetString(2)
+                        });
+                    }
+                }
+            }
+
+            await conn.CloseAsync();
+            return userDtos;
         }
     }
 }

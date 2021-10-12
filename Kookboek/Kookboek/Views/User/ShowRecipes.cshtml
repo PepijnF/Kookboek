@@ -1,0 +1,11 @@
+@model IEnumerable<RecipeModel>
+
+@{
+    foreach (var recipeModel in Model)
+    {
+        <h1>@recipeModel.Title</h1>
+        <p>@recipeModel.Ingredients</p>
+        <p>@recipeModel.Preparation</p>
+        <img src="data:image;base64,@recipeModel.ImageBase64" />
+    }
+}
