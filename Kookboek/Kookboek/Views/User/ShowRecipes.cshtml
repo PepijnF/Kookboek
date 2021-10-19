@@ -3,9 +3,13 @@
 @{
     foreach (var recipeModel in Model)
     {
-        <h1>@recipeModel.Title</h1>
-        <p>@recipeModel.Ingredients</p>
-        <p>@recipeModel.Preparation</p>
-        <img src="data:image;base64,@recipeModel.ImageBase64" />
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src=data:image;base64,@recipeModel.ImageBase64 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@recipeModel.Title</h5>
+                <p class="card-text">@recipeModel.Preparation</p>
+                @Html.ActionLink("Show Recipe", "ShowRecipe", "Recipe", new {id=@recipeModel.Id},new {@class="btn btn-primary"})
+            </div>
+        </div> 
     }
 }

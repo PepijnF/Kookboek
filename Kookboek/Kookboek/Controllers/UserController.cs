@@ -88,6 +88,7 @@ namespace Kookboek.Controllers
             {
                recipeModels.Add(new RecipeModel()
                {
+                   Id = recipe.Id,
                    Title = recipe.Title,
                    Ingredients = recipe.Ingredients,
                    Preparation = recipe.Preparations,

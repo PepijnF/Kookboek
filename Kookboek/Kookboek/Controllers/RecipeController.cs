@@ -74,5 +74,22 @@ namespace Kookboek.Controllers
             
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult ShowRecipe(string id)
+        {
+            Recipe recipe = _recipeContainer.FindById(id);
+            Console.WriteLine(recipe.Title);
+
+            RecipeModel recipeModel = new RecipeModel()
+            {
+                Id = recipe.Id,
+                ImageBase64 = recipe.FoodImage.Base64Image(),
+                Ingredients = recipe.Ingredients,
+                Preparation = recipe.Preparations,
+                Title = recipe.Title
+            };
+            // TODO change view
+            return View("ShowRecipe", recipeModel);
+        }
     }
 }

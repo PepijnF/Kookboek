@@ -7,6 +7,7 @@ namespace Kookboek.Models
 {
     public class RecipeModel
     {
+        public string Id { get; set; }
         [DisplayName("Image")]
         public IFormFile Image { get; set; }
         
