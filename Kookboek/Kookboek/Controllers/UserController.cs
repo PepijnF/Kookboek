@@ -35,6 +35,7 @@ namespace Kookboek.Controllers
             {
                 var session = HttpContext.Session;
                 session.Set("user_id", Encoding.ASCII.GetBytes(user.Id));
+                session.Set("Username", Encoding.ASCII.GetBytes(user.Username));
             }
             // TODO Some kind of fail statement
             
@@ -97,6 +98,14 @@ namespace Kookboek.Controllers
             }
 
             return View(recipeModels);
+        }
+
+        public IActionResult SignOut()
+        {
+            var session = HttpContext.Session;
+            session.Remove("Username");
+            session.Remove("user_id");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

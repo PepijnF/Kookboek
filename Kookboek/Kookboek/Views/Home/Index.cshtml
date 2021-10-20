@@ -1,28 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model RecipeModel;
-
-@{
-    using (Html.BeginForm("PostRecipe", "Home", FormMethod.Post, new{ enctype="multipart/form-data"}))
-    {
-        @Html.LabelFor(m => m.Image)
-        <div class="input-group mb-3">
-            @Html.TextBoxFor(m => m.Image, new { @class="form-control" , type="file", accept="image/*"})
-            @Html.ValidationMessageFor(m => m.Image)
-        </div>
-        @Html.LabelFor(m => m.Title)
-        <div class="input-group mb-3">
-            @Html.TextBoxFor(m => m.Title, new { @class="form-control" })
-        </div>
-        @Html.LabelFor(m => m.Ingredients)
-        <div class="input-group mb-3">
-            @Html.TextAreaFor(m => m.Ingredients, new { @class="form-control" })
-        </div>
-        @Html.LabelFor(m => m.Preparation)
-        <div class="input-group mb-3">
-            @Html.TextAreaFor(m => m.Preparation, new { @class="form-control" })
-        </div>
-        <input type="submit" value="Submit recipe" class="btn btn-primary btn-lg"/>
-    }
-}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Kookboek</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Welkom bij het online kookboek</p>
+    </div>
+</div>

@@ -30,6 +30,7 @@ namespace Kookboek
         {
             // MVC Session
             services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
             // Dall
             services.AddSingleton<IRecipeDal, RecipeDal>();

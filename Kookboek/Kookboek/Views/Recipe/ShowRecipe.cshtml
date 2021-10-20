@@ -1,4 +1,10 @@
 @model RecipeModel
 
+<article class="blog-post">
+    <img src="data:image;base64,@Model.ImageBase64" />
+    <h2 class="blog-post-title">@Model.Title</h2>
 
-<img src="data:image;base64,@Model.ImageBase64" />
+    <p>@Model.Ingredients</p>
+    <hr>
+    <p>@Model.Preparation</p>
+</article>
