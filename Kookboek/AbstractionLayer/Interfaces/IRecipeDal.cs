@@ -9,5 +9,6 @@ namespace AbstractionLayer
         public Task<List<RecipeDto>> FindAllByUserId(string userId);
         public Task<RecipeDto> FindById(string recipeId);
         public Task<List<RecipeDto>> GetAll();
+        public Task<List<RecipeDto>> GetAllByCookingBookId(string cookingBookId);
     }
 }

@@ -11,6 +11,7 @@ namespace LogicLayer
         public string Username { get; set; }
         public string Password { get; set; }
         public List<Recipe> Recipes { get; set; }
+        public List<CookingBook> CookingBooks { get; set; }
 
         public void AddRecipe(Recipe recipe)
         {
@@ -43,6 +44,7 @@ namespace LogicLayer
         {
             Id = System.Guid.NewGuid().ToString();
             Recipes = new List<Recipe>();
+            CookingBooks = new List<CookingBook>();
         }
 
         public User(string username, IUserDal userDal, IRecipeDal recipeDal, IFoodImageDal foodImageDal)

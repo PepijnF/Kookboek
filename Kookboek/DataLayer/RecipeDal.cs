@@ -138,6 +138,38 @@ namespace DataLayer
             conn.CloseAsync();
             return recipeDtos;
         }
+
+        public async Task<List<RecipeDto>> GetAllByCookingBookId(string cookingBookId)
+        {
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
+            List<RecipeDto> recipeDtos = new List<RecipeDto>();
+            
+            await using (NpgsqlCommand cmd = new NpgsqlCommand(@"SELECT id, Title, Ingredients, Preparation, OwnerId FROM recipes
+                                                                     INNER JOIN recipes_cookingbooks rc on recipes.id = rc.recipe_id
+                                                                     WHERE rc.cookingbook_id = @cookingBookId;"))
+            {
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("cookingBookId", cookingBookId);
+                
+                await using (NpgsqlDataReader npgsqlDataReader = cmd.ExecuteReader())
+                {
+                    while (npgsqlDataReader.Read())
+                    {
+                        recipeDtos.Add(new RecipeDto()
+                        {
+                            Id = npgsqlDataReader.GetString(0),
+                            Title = npgsqlDataReader.GetString(1),
+                            Ingredients = npgsqlDataReader.GetString(3),
+                            Preparation = npgsqlDataReader.GetString(2),
+                            OwnerId = npgsqlDataReader.GetString(4)
+                        });
+                    }
+                }
+            }
+            await conn.CloseAsync();
+            return recipeDtos;
+        }
     }
 }
 

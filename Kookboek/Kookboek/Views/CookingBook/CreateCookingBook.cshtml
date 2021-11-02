@@ -1,0 +1,18 @@
+@model NewCookingBookModel
+
+
+@{
+    using (Html.BeginForm("CreateCookingBook", "CookingBook", FormMethod.Post, new {enctype="multipart/form-data"}))
+    {
+        @Html.LabelFor(m => m.CookingBookModel.Name)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.CookingBookModel.Name)
+        </div>
+        @Html.LabelFor(m => m.CookingBookModel.Description)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.CookingBookModel.Description)
+        </div>
+        @Html.ListBoxFor(m => m.SelectedRecipes, Model.RecipeModels, new { @class="form-select"});
+        <input type="submit" value="Submit recipe" class="btn btn-primary btn-lg"/>
+    }
+}

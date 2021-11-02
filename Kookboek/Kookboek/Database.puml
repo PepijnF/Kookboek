@@ -36,6 +36,7 @@ table( FoodImage ) {
 table( CookingBook ) {
     primary_key(id): varchar
     column(name) : varchar
+    column(description) : varchar
 }
 
 table(User_CookingBook){

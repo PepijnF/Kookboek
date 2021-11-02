@@ -36,6 +36,7 @@ namespace Kookboek
             services.AddSingleton<IRecipeDal, RecipeDal>();
             services.AddSingleton<IUserDal, UserDal>();
             services.AddSingleton<IFoodImageDal, FoodImageDal>();
+            services.AddSingleton<ICookingBookDal, CookingBookDal>();
             
             // Logic
             services.AddSingleton<IRecipeLogic, RecipeLogicLogic>();

@@ -12,6 +12,7 @@ class User {
     + Id: string
     + Username: string
     + Recipes: Recipe[]
+    + CookingBooks: CookingBook[]
     
     + AddRecipe(recipe: Recipe)
     + Update()
@@ -52,8 +53,19 @@ class FoodImage {
     + Update()
     + Image(imageDto: ImageDto)
 }
+
+class CookingBook {
+    + Id: string
+    + Name: string
+    + Description: string
+    + Recipes: Recipe[]
+    
+    + AddRecipe(recipe: Recipe)
+}
+
 UserContainer --> "*" User : Users
 RecipeContainer --> "*" Recipe : Recipes
 User "1" --> "*" Recipe
+User "*" --> "*" CookingBook
 Recipe "1" --> "1" FoodImage
 @enduml
