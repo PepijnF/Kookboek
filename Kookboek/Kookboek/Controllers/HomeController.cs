@@ -62,17 +62,6 @@ namespace Kookboek.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ShowRecipe()
-        {
-            RecipeDto recipeDto = (await _recipeLogic.GetRecipeFromDb())[0];
-            RecipeModel recipeModel = new RecipeModel
-            {
-            };
-
-            return View(recipeModel);
-        }
-        
-
         [HttpPost]
         public IActionResult PostRecipe([Bind(include:"Image")]RecipeModel recipeModel)
         {

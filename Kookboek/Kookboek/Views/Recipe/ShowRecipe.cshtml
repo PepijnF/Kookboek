@@ -1,5 +1,7 @@
 @model RecipeModel
 
+<a href="@Url.ActionLink("EditRecipe", "Recipe", new {recipeId=@Model.Id})">Edit</a>
+
 <article class="blog-post">
     <img src="data:image;base64,@Model.ImageBase64" />
     <h2 class="blog-post-title">@Model.Title</h2>

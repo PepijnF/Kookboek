@@ -75,8 +75,44 @@ namespace DataLayer
                     await cmd.ExecuteNonQueryAsync();
                 }    
             }
+
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("CALL UpdateOwnerReference(@userId, @cookingBookId)"))
+            {
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("userId", cookingBookDto.OwnerId);
+                cmd.Parameters.AddWithValue("cookingBookId", cookingBookDto.Id);
+                await cmd.ExecuteNonQueryAsync();
+            }
             
             await conn.CloseAsync();
+        }
+
+        public async Task<CookingBookDto> FindById(string cookingBookId)
+        {
+            await using NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
+            CookingBookDto cookingBookDto = new CookingBookDto();
+
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM CookingBooks WHERE Id = @cookingBookId"))
+            {
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("cookingBookId", cookingBookId);
+
+                await using (NpgsqlDataReader dataReader = cmd.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        cookingBookDto = new CookingBookDto()
+                        {
+                            Id = dataReader.GetString(0),
+                            Name = dataReader.GetString(1),
+                            Description = dataReader.GetString(2)
+                        };
+                    }
+                }
+            }
+
+            return cookingBookDto;
         }
     }
 }

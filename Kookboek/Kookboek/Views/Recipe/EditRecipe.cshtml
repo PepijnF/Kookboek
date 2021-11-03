@@ -1,0 +1,40 @@
+@model EditRecipeModel
+
+
+@{
+    using (Html.BeginForm("EditRecipe", "Recipe", FormMethod.Post, new{ enctype="multipart/form-data"}))
+    {
+            @Html.LabelFor(m => m.EditedRecipeModel.Image)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.EditedRecipeModel.Image, new { @class="" , type="file", accept="image/*"})
+            @Html.ValidationMessageFor(m => m.EditedRecipeModel.Image)
+        </div>
+        @Html.LabelFor(m => m.EditedRecipeModel.Title)
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(m => m.EditedRecipeModel.Title, new { @Value=Model.OldRecipeModel.Title ,@class="form-control"  })
+        </div>
+        @Html.LabelFor(m => m.EditedRecipeModel.Ingredients)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.EditedRecipeModel.Ingredients, new { @class="form-control", value=Model.OldRecipeModel.Ingredients })
+        </div>
+        @Html.LabelFor(m => m.EditedRecipeModel.Preparation)
+        <div class="input-group mb-3">
+            @Html.TextAreaFor(m => m.EditedRecipeModel.Preparation, new { @class="form-control", value=Model.OldRecipeModel.Preparation })
+        </div>
+        
+        @Html.HiddenFor(m => m.EditedRecipeModel.Id, new { Value=Model.OldRecipeModel.Id})
+        <input type="submit" value="Submit recipe" class="btn btn-primary btn-lg"/>
+    }
+}
+
+<script type="text/javascript">
+
+$(function() {
+    $("#EditedRecipeModel_Title").val("@Model.OldRecipeModel.Title")
+    $("#EditedRecipeModel_Ingredients").html("@Model.OldRecipeModel.Ingredients")
+    $("#EditedRecipeModel_Preparation").html("@Model.OldRecipeModel.Preparation")
+    $("#EditedRecipeModel_Id").val("@Model.OldRecipeModel.Id")
+})
+
+</script>
+

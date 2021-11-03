@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Http
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor _httpContextAccessor
 <div class="dropdown text-end">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
         <img src="~/img/account_circle_white_24dp.svg" alt="mdo" class="rounded-circle" width="32" height="32"> 
@@ -7,8 +7,10 @@
     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
         <li><a class="dropdown-item" href="@Url.ActionLink("AddRecipe", "Recipe")">Add recipe</a></li>
         <li><a class="dropdown-item" href="@Url.ActionLink("ShowRecipes", "User")">Show recipes</a></li>
+        <li><a class="dropdown-item" href="@Url.ActionLink("CreateCookingBook", "CookingBook")">Add CookingBook</a></li>
+        <li><a class="dropdown-item" href="@Url.ActionLink("ShowCookingBooks", "CookingBook")">Show CookingBooks</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="@Url.ActionLink("SignOut", "User")">Sign out</a></li>
-        <li><a class="dropdown-item" href="@Url.ActionLink("CreateCookingBook", "CookingBook")">Add CookingBook</a></li>
+
     </ul>
   </div>

@@ -94,5 +94,20 @@ namespace DataLayer
 
             return foodImageDto;
         }
+
+        public async Task RemoveByRecipeId(string recipeId)
+        {
+            NpgsqlConnection conn = new NpgsqlConnection(Connection.connString);
+            await conn.OpenAsync();
+
+            await using (NpgsqlCommand cmd = new NpgsqlCommand("DELETE FROM recipeimages WHERE recipeid = @recipeId"))
+            {
+                cmd.Connection = conn;
+                cmd.Parameters.AddWithValue("recipeId", recipeId);
+                await cmd.ExecuteNonQueryAsync();
+            }
+
+            await conn.CloseAsync();
+        }
     }
 }

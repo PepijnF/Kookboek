@@ -14,11 +14,13 @@ namespace Kookboek.Controllers
     {
         private readonly RecipeContainer _recipeContainer;
         private readonly ICookingBookDal _cookingBookDal;
+        private readonly CookingBookContainer _cookingBookContainer;
         
-        public CookingBookController(RecipeContainer recipeContainer, ICookingBookDal cookingBookDal)
+        public CookingBookController(RecipeContainer recipeContainer, ICookingBookDal cookingBookDal, CookingBookContainer cookingBookContainer)
         {
             _recipeContainer = recipeContainer;
             _cookingBookDal = cookingBookDal;
+            _cookingBookContainer = cookingBookContainer;
         }
         
         [HttpGet]
@@ -78,12 +80,82 @@ namespace Kookboek.Controllers
 
             var cookingBook = new CookingBook(_cookingBookDal)
             {
+                OwnerId = userId,
                 Name = newCookingBookModel.CookingBookModel.Name,
                 Description = newCookingBookModel.CookingBookModel.Description,
                 Recipes = recipes
             };
             cookingBook.Save();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult ShowCookingBooks()
+        {
+            var session = HttpContext.Session;
+            byte[] userBytes;
+            string userId;
+            if (session.TryGetValue("user_id", out userBytes))
+            {
+                userId = Encoding.UTF8.GetString(userBytes, 0, userBytes.Length);
+            }
+            else
+            {
+                userId = "0";
+            }
+
+            List<CookingBook> cookingBooks = _cookingBookContainer.GetAllByUserId(userId);
+
+            List<CookingBookModel> cookingBookModels = new List<CookingBookModel>();
+            foreach (var cookingBook in cookingBooks)
+            {
+                List<RecipeModel> models = new List<RecipeModel>();
+                foreach (var recipe in _recipeContainer.FindAllByCookingBookId(cookingBook.Id))
+                {
+                    models.Add(new RecipeModel()
+                    {
+                       Id = recipe.Id,
+                       Title = recipe.Title,
+                       Ingredients = recipe.Ingredients,
+                       Preparation = recipe.Preparations,
+                       ImageBase64 = recipe.FoodImage.Base64Image()
+                    });
+                }
+
+                cookingBookModels.Add(new CookingBookModel()
+               {
+                   Id = cookingBook.Id,
+                   Name = cookingBook.Name,
+                   Description = cookingBook.Description,
+                   RecipeModels = models
+               }); 
+            }
+
+            return View(cookingBookModels);
+        }
+
+        public IActionResult ShowCookingBook(string cookingBookId)
+        {
+            var cookingBook = _cookingBookContainer.FindById(cookingBookId);
+            List<RecipeModel> recipeModels = new List<RecipeModel>();
+            foreach (var recipe in cookingBook.Recipes)
+            {
+               recipeModels.Add(new RecipeModel()
+               {
+                   Id = recipe.Id,
+                   ImageBase64 = recipe.FoodImage.Base64Image(),
+                   Ingredients = recipe.Ingredients,
+                   Title = recipe.Title,
+                   Preparation = recipe.Title
+               }); 
+            }
+            
+            return View(new CookingBookModel()
+            {
+                Id = cookingBook.Id,
+                Name = cookingBook.Name,
+                Description = cookingBook.Description,
+                RecipeModels = recipeModels
+            });
         }
     }
 }

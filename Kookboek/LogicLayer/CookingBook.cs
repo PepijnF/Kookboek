@@ -8,6 +8,7 @@ namespace LogicLayer
     public class CookingBook
     {
         public string Id { get; set; }
+        public string OwnerId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Recipe> Recipes { get; set; }
@@ -32,11 +33,21 @@ namespace LogicLayer
             Recipes = new List<Recipe>();
         }
 
+        public CookingBook(CookingBookDto cookingBookDto, List<Recipe> recipes)
+        {
+            Id = cookingBookDto.Id;
+            OwnerId = cookingBookDto.OwnerId;
+            Name = cookingBookDto.Name;
+            Description = cookingBookDto.Description;
+            Recipes = recipes;
+        }
+
         public void Save()
         {
             var cookingBookDto = new CookingBookDto()
             {
                 Id = this.Id,
+                OwnerId = this.OwnerId,
                 Description = this.Description,
                 Name = this.Name
             };

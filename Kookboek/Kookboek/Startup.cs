@@ -44,6 +44,7 @@ namespace Kookboek
             // Containers
             services.AddSingleton<UserContainer, UserContainer>();
             services.AddSingleton<RecipeContainer, RecipeContainer>();
+            services.AddSingleton<CookingBookContainer, CookingBookContainer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

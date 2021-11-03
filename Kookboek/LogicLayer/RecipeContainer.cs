@@ -16,6 +16,14 @@ namespace LogicLayer
             _recipes.Add(recipe);
         }
 
+        public void EditRecipe(Recipe recipe)
+        {
+            recipe.Save(_recipeDal, _foodImageDal);
+            int index = _recipes.FindIndex(r => r.Id == recipe.Id);
+            _recipes.RemoveAt(index);
+            _recipes.Add(recipe);
+        }
+
         public void RemoveRecipe(Recipe recipe)
         {
             _recipes.Remove(recipe);
@@ -29,6 +37,32 @@ namespace LogicLayer
         public Recipe FindById(string recipeId)
         {
             return _recipes.Find(r => r.Id == recipeId);
+        }
+
+        public List<Recipe> FindAllByCookingBookId(string cookingBookId)
+        {
+            List<Recipe> recipes = new List<Recipe>();
+            foreach (var recipeDto in _recipeDal.GetAllByCookingBookId(cookingBookId).GetAwaiter().GetResult())
+            {
+                var tempImage = _foodImageDal.FindByRecipeId(recipeDto.Id).GetAwaiter().GetResult();
+                                
+                recipes.Add(new Recipe()
+                {
+                    Id = recipeDto.Id,
+                    Title = recipeDto.Title,
+                    Ingredients = recipeDto.Ingredients,
+                    Preparations = recipeDto.Preparation,
+                    UserId = recipeDto.OwnerId,
+                    FoodImage = new FoodImage()
+                    {
+                        Id = tempImage.Id,
+                        Image = tempImage.Image,
+                        RecipeId = tempImage.RecipeId
+                    }
+                });
+            }
+
+            return recipes;
         }
 
         public RecipeContainer(IRecipeDal recipeDal, IFoodImageDal foodImageDal)
