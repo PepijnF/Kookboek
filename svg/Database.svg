@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="705px" preserveAspectRatio="none" style="width:355px;height:705px;background:#FFFFFF;" version="1.1" viewBox="0 0 355 705" width="355px" zoomAndPan="magnify"><defs><filter height="300%" id="f1y0wxorjgvric" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3fd616f346a44cd59a91eb10b19e157c]
+class User--><rect codeLine="15" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="86.4141" id="User" style="stroke:#2688D4;stroke-width:1.5;" width="138.3333" x="52" y="287"/><ellipse cx="103.4167" cy="303" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M104.7604,310 L102.3073,310 L102.3073,299.2656 L99.1667,299.2656 L99.1667,297 L107.901,297 L107.901,299.2656 L104.7604,299.2656 L104.7604,310 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="27" x="123.9167" y="307.1543">User</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="53" x2="189.3333" y1="319" y2="319"/><path d="M64.0417,325.7214 C62.7767,325.7214 61.75,326.748 61.75,328.013 C61.75,328.1597 61.75,328.3064 61.7775,328.4439 L59,331.2214 L59,333.0547 L61.75,333.0547 L61.75,331.2214 L63.5833,331.2214 L63.5833,330.3047 L63.6108,330.2772 C63.7483,330.3047 63.895,330.3047 64.0417,330.3047 C65.3067,330.3047 66.3333,329.278 66.3333,328.013 C66.3333,326.748 65.3067,325.7214 64.0417,325.7214 M64.5,326.638 C65.0042,326.638 65.4167,327.0505 65.4167,327.5547 C65.4167,328.0589 65.0042,328.4714 64.5,328.4714 C63.9958,328.4714 63.5833,328.0589 63.5833,327.5547 C63.5833,327.0505 63.9958,326.638 64.5,326.638 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="12" x="71.3333" y="333.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="87.3333" y="333.2104">: varchar</text><path d="M61.75,338.526 C60.2283,338.526 59,339.7544 59,341.276 C59,342.7977 60.2283,344.026 61.75,344.026 C63.2717,344.026 64.5,342.7977 64.5,341.276 C64.5,339.7544 63.2717,338.526 61.75,338.526 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="71.3333" y="346.0151">username : varchar</text><path d="M61.75,351.3307 C60.2283,351.3307 59,352.5591 59,354.0807 C59,355.6024 60.2283,356.8307 61.75,356.8307 C63.2717,356.8307 64.5,355.6024 64.5,354.0807 C64.5,352.5591 63.2717,351.3307 61.75,351.3307 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="71.3333" y="358.8198">password : varchar</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="53" x2="189.3333" y1="365.4141" y2="365.4141"/><!--MD5=[20418cb98520644da1e87dc0310aa74a]
+class Recipe--><rect codeLine="21" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="112.0234" id="Recipe" style="stroke:#2688D4;stroke-width:1.5;" width="153.3333" x="44.5" y="433"/><ellipse cx="96.9167" cy="449" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M98.2604,456 L95.8073,456 L95.8073,445.2656 L92.6667,445.2656 L92.6667,443 L101.401,443 L101.401,445.2656 L98.2604,445.2656 L98.2604,456 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40" x="117.4167" y="453.1543">Recipe</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="45.5" x2="196.8333" y1="465" y2="465"/><path d="M56.5417,471.7214 C55.2767,471.7214 54.25,472.748 54.25,474.013 C54.25,474.1597 54.25,474.3064 54.2775,474.4439 L51.5,477.2214 L51.5,479.0547 L54.25,479.0547 L54.25,477.2214 L56.0833,477.2214 L56.0833,476.3047 L56.1108,476.2772 C56.2483,476.3047 56.395,476.3047 56.5417,476.3047 C57.8067,476.3047 58.8333,475.278 58.8333,474.013 C58.8333,472.748 57.8067,471.7214 56.5417,471.7214 M57,472.638 C57.5042,472.638 57.9167,473.0505 57.9167,473.5547 C57.9167,474.0589 57.5042,474.4714 57,474.4714 C56.4958,474.4714 56.0833,474.0589 56.0833,473.5547 C56.0833,473.0505 56.4958,472.638 57,472.638 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="12" x="63.8333" y="479.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="79.8333" y="479.2104">: varchar</text><path d="M56.5417,484.526 C55.2767,484.526 54.25,485.5527 54.25,486.8177 C54.25,486.9644 54.25,487.111 54.2775,487.2485 L51.5,490.026 L51.5,491.8594 L54.25,491.8594 L54.25,490.026 L56.0833,490.026 L56.0833,489.1094 L56.1108,489.0819 C56.2483,489.1094 56.395,489.1094 56.5417,489.1094 C57.8067,489.1094 58.8333,488.0827 58.8333,486.8177 C58.8333,485.5527 57.8067,484.526 56.5417,484.526 M57,485.4427 C57.5042,485.4427 57.9167,485.8552 57.9167,486.3594 C57.9167,486.8635 57.5042,487.276 57,487.276 C56.4958,487.276 56.0833,486.8635 56.0833,486.3594 C56.0833,485.8552 56.4958,485.4427 57,485.4427 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="63.8333" y="492.0151">user_id : varchar</text><path d="M54.25,497.3307 C52.7283,497.3307 51.5,498.5591 51.5,500.0807 C51.5,501.6024 52.7283,502.8307 54.25,502.8307 C55.7717,502.8307 57,501.6024 57,500.0807 C57,498.5591 55.7717,497.3307 54.25,497.3307 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="63.8333" y="504.8198">title : varchar</text><path d="M54.25,510.1354 C52.7283,510.1354 51.5,511.3638 51.5,512.8854 C51.5,514.4071 52.7283,515.6354 54.25,515.6354 C55.7717,515.6354 57,514.4071 57,512.8854 C57,511.3638 55.7717,510.1354 54.25,510.1354 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="63.8333" y="517.6245">ingredients : varchar</text><path d="M54.25,522.9401 C52.7283,522.9401 51.5,524.1684 51.5,525.6901 C51.5,527.2118 52.7283,528.4401 54.25,528.4401 C55.7717,528.4401 57,527.2118 57,525.6901 C57,524.1684 55.7717,522.9401 54.25,522.9401 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="63.8333" y="530.4292">preparations : varchar</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="45.5" x2="196.8333" y1="537.0234" y2="537.0234"/><!--MD5=[5b08311be8095210946f0291378eb0f5]
+class FoodImage--><rect codeLine="29" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="86.4141" id="FoodImage" style="stroke:#2688D4;stroke-width:1.5;" width="132.3333" x="7" y="605"/><ellipse cx="37" cy="621" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M38.3437,628 L35.8906,628 L35.8906,617.2656 L32.75,617.2656 L32.75,615 L41.4844,615 L41.4844,617.2656 L38.3437,617.2656 L38.3437,628 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="67" x="54.3333" y="625.1543">FoodImage</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="8" x2="138.3333" y1="637" y2="637"/><path d="M19.0417,643.7214 C17.7767,643.7214 16.75,644.748 16.75,646.013 C16.75,646.1597 16.75,646.3064 16.7775,646.4439 L14,649.2214 L14,651.0547 L16.75,651.0547 L16.75,649.2214 L18.5833,649.2214 L18.5833,648.3047 L18.6108,648.2772 C18.7483,648.3047 18.895,648.3047 19.0417,648.3047 C20.3067,648.3047 21.3333,647.278 21.3333,646.013 C21.3333,644.748 20.3067,643.7214 19.0417,643.7214 M19.5,644.638 C20.0042,644.638 20.4167,645.0505 20.4167,645.5547 C20.4167,646.0589 20.0042,646.4714 19.5,646.4714 C18.9958,646.4714 18.5833,646.0589 18.5833,645.5547 C18.5833,645.0505 18.9958,644.638 19.5,644.638 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="12" x="26.3333" y="651.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="42.3333" y="651.2104">: varchar</text><path d="M19.0417,656.526 C17.7767,656.526 16.75,657.5527 16.75,658.8177 C16.75,658.9644 16.75,659.111 16.7775,659.2485 L14,662.026 L14,663.8594 L16.75,663.8594 L16.75,662.026 L18.5833,662.026 L18.5833,661.1094 L18.6108,661.0819 C18.7483,661.1094 18.895,661.1094 19.0417,661.1094 C20.3067,661.1094 21.3333,660.0827 21.3333,658.8177 C21.3333,657.5527 20.3067,656.526 19.0417,656.526 M19.5,657.4427 C20.0042,657.4427 20.4167,657.8552 20.4167,658.3594 C20.4167,658.8635 20.0042,659.276 19.5,659.276 C18.9958,659.276 18.5833,658.8635 18.5833,658.3594 C18.5833,657.8552 18.9958,657.4427 19.5,657.4427 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="107" x="26.3333" y="664.0151">recipe_id : varchar</text><path d="M16.75,669.3307 C15.2283,669.3307 14,670.5591 14,672.0807 C14,673.6024 15.2283,674.8307 16.75,674.8307 C18.2717,674.8307 19.5,673.6024 19.5,672.0807 C19.5,670.5591 18.2717,669.3307 16.75,669.3307 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="79" x="26.3333" y="676.8198">image : bytea</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="8" x2="138.3333" y1="683.4141" y2="683.4141"/><!--MD5=[b5b7c7bd846c82f771d54fd2be55f5b0]
+class CookingBook--><rect codeLine="35" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="86.4141" id="CookingBook" style="stroke:#2688D4;stroke-width:1.5;" width="143.3333" x="117.5" y="7"/><ellipse cx="147.95" cy="23" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M149.2938,30 L146.8406,30 L146.8406,19.2656 L143.7,19.2656 L143.7,17 L152.4344,17 L152.4344,19.2656 L149.2938,19.2656 L149.2938,30 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="77" x="165.3833" y="27.1543">CookingBook</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="118.5" x2="259.8333" y1="39" y2="39"/><path d="M129.5417,45.7214 C128.2767,45.7214 127.25,46.748 127.25,48.013 C127.25,48.1597 127.25,48.3064 127.2775,48.4439 L124.5,51.2214 L124.5,53.0547 L127.25,53.0547 L127.25,51.2214 L129.0833,51.2214 L129.0833,50.3047 L129.1108,50.2772 C129.2483,50.3047 129.395,50.3047 129.5417,50.3047 C130.8067,50.3047 131.8333,49.278 131.8333,48.013 C131.8333,46.748 130.8067,45.7214 129.5417,45.7214 M130,46.638 C130.5042,46.638 130.9167,47.0505 130.9167,47.5547 C130.9167,48.0589 130.5042,48.4714 130,48.4714 C129.4958,48.4714 129.0833,48.0589 129.0833,47.5547 C129.0833,47.0505 129.4958,46.638 130,46.638 " fill="#B8861B" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="12" x="136.8333" y="53.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="148.8333" y="53.2104">: varchar</text><path d="M127.25,58.526 C125.7283,58.526 124.5,59.7544 124.5,61.276 C124.5,62.7977 125.7283,64.026 127.25,64.026 C128.7717,64.026 130,62.7977 130,61.276 C130,59.7544 128.7717,58.526 127.25,58.526 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="136.8333" y="66.0151">name : varchar</text><path d="M127.25,71.3307 C125.7283,71.3307 124.5,72.5591 124.5,74.0807 C124.5,75.6024 125.7283,76.8307 127.25,76.8307 C128.7717,76.8307 130,75.6024 130,74.0807 C130,72.5591 128.7717,71.3307 127.25,71.3307 " fill="#EFEFEF" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="118" x="136.8333" y="78.8198">description : varchar</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="118.5" x2="259.8333" y1="85.4141" y2="85.4141"/><!--MD5=[936229959d2d7830ad6d17f8dd6c06af]
+class User_CookingBook--><rect codeLine="41" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="73.6094" id="User_CookingBook" style="stroke:#2688D4;stroke-width:1.5;" width="167.3333" x="37.5" y="153"/><ellipse cx="63.9" cy="169" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M65.2438,176 L62.7906,176 L62.7906,165.2656 L59.65,165.2656 L59.65,163 L68.3844,163 L68.3844,165.2656 L65.2438,165.2656 L65.2438,176 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="110" x="80.4333" y="173.1543">User_CookingBook</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="38.5" x2="203.8333" y1="185" y2="185"/><path d="M49.5417,191.7214 C48.2767,191.7214 47.25,192.748 47.25,194.013 C47.25,194.1597 47.25,194.3064 47.2775,194.4439 L44.5,197.2214 L44.5,199.0547 L47.25,199.0547 L47.25,197.2214 L49.0833,197.2214 L49.0833,196.3047 L49.1108,196.2772 C49.2483,196.3047 49.395,196.3047 49.5417,196.3047 C50.8067,196.3047 51.8333,195.278 51.8333,194.013 C51.8333,192.748 50.8067,191.7214 49.5417,191.7214 M50,192.638 C50.5042,192.638 50.9167,193.0505 50.9167,193.5547 C50.9167,194.0589 50.5042,194.4714 50,194.4714 C49.4958,194.4714 49.0833,194.0589 49.0833,193.5547 C49.0833,193.0505 49.4958,192.638 50,192.638 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="56.8333" y="199.2104">user_id: varchar</text><path d="M49.5417,204.526 C48.2767,204.526 47.25,205.5527 47.25,206.8177 C47.25,206.9644 47.25,207.111 47.2775,207.2485 L44.5,210.026 L44.5,211.8594 L47.25,211.8594 L47.25,210.026 L49.0833,210.026 L49.0833,209.1094 L49.1108,209.0819 C49.2483,209.1094 49.395,209.1094 49.5417,209.1094 C50.8067,209.1094 51.8333,208.0827 51.8333,206.8177 C51.8333,205.5527 50.8067,204.526 49.5417,204.526 M50,205.4427 C50.5042,205.4427 50.9167,205.8552 50.9167,206.3594 C50.9167,206.8635 50.5042,207.276 50,207.276 C49.4958,207.276 49.0833,206.8635 49.0833,206.3594 C49.0833,205.8552 49.4958,205.4427 50,205.4427 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="56.8333" y="212.0151">cookingbook_id : varchar</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="38.5" x2="203.8333" y1="218.6094" y2="218.6094"/><!--MD5=[31c9a0cc9adb2dec249e8fe68857470b]
+class Recipe_CookingBook--><rect codeLine="46" fill="#FFFFFF" filter="url(#f1y0wxorjgvric)" height="73.6094" id="Recipe_CookingBook" style="stroke:#2688D4;stroke-width:1.5;" width="167.3333" x="174.5" y="611"/><ellipse cx="195.05" cy="627" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M196.3938,634 L193.9406,634 L193.9406,623.2656 L190.8,623.2656 L190.8,621 L199.5344,621 L199.5344,623.2656 L196.3938,623.2656 L196.3938,634 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="210.2833" y="631.1543">Recipe_CookingBook</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="175.5" x2="340.8333" y1="643" y2="643"/><path d="M186.5417,649.7214 C185.2767,649.7214 184.25,650.748 184.25,652.013 C184.25,652.1597 184.25,652.3064 184.2775,652.4439 L181.5,655.2214 L181.5,657.0547 L184.25,657.0547 L184.25,655.2214 L186.0833,655.2214 L186.0833,654.3047 L186.1108,654.2772 C186.2483,654.3047 186.395,654.3047 186.5417,654.3047 C187.8067,654.3047 188.8333,653.278 188.8333,652.013 C188.8333,650.748 187.8067,649.7214 186.5417,649.7214 M187,650.638 C187.5042,650.638 187.9167,651.0505 187.9167,651.5547 C187.9167,652.0589 187.5042,652.4714 187,652.4714 C186.4958,652.4714 186.0833,652.0589 186.0833,651.5547 C186.0833,651.0505 186.4958,650.638 187,650.638 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="193.8333" y="657.2104">recipe_id: varchar</text><path d="M186.5417,662.526 C185.2767,662.526 184.25,663.5527 184.25,664.8177 C184.25,664.9644 184.25,665.111 184.2775,665.2485 L181.5,668.026 L181.5,669.8594 L184.25,669.8594 L184.25,668.026 L186.0833,668.026 L186.0833,667.1094 L186.1108,667.0819 C186.2483,667.1094 186.395,667.1094 186.5417,667.1094 C187.8067,667.1094 188.8333,666.0827 188.8333,664.8177 C188.8333,663.5527 187.8067,662.526 186.5417,662.526 M187,663.4427 C187.5042,663.4427 187.9167,663.8552 187.9167,664.3594 C187.9167,664.8635 187.5042,665.276 187,665.276 C186.4958,665.276 186.0833,664.8635 186.0833,664.3594 C186.0833,663.8552 186.4958,663.4427 187,663.4427 " fill="#AAAAAA" style="stroke:;stroke-width:0.0;stroke-dasharray:;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="193.8333" y="670.0151">cookingbook_id : varchar</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="175.5" x2="340.8333" y1="676.6094" y2="676.6094"/><!--MD5=[da4058a0077cb8bcbee3648c177fb368]
+link User to Recipe--><path codeLine="51" d="M121,381.03 C121,381.03 121,424.78 121,424.78 " fill="none" id="User-Recipe" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="127" y1="424.78" y2="432.78"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="115" y1="424.78" y2="432.78"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="121" y1="424.78" y2="432.78"/><ellipse cx="121" cy="418.78" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;fill:none;"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="117" x2="125" y1="377.03" y2="377.03"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="117" x2="125" y1="380.03" y2="380.03"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="121" x2="121" y1="381.03" y2="373.03"/><!--MD5=[59e5b2fd1c74e4b5da31d9eeedc90393]
+link Recipe to FoodImage--><path codeLine="52" d="M91.75,553.06 C91.75,553.06 91.75,596.94 91.75,596.94 " fill="none" id="Recipe-FoodImage" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="91.75" x2="91.75" y1="593.94" y2="604.94"/><ellipse cx="91.75" cy="593.94" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;fill:none;"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="95.75" x2="87.75" y1="600.94" y2="600.94"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="87.75" x2="95.75" y1="549.06" y2="549.06"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="87.75" x2="95.75" y1="552.06" y2="552.06"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="91.75" x2="91.75" y1="553.06" y2="545.06"/><!--MD5=[af365ad502e1f9b777016aa93580c664]
+link User_CookingBook to User--><path codeLine="53" d="M121,235.15 C121,235.15 121,278.97 121,278.97 " fill="none" id="User_CookingBook-User" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="125" x2="117" y1="282.97" y2="282.97"/><line style="stroke:#A80036;stroke-width:1.0;" x1="125" x2="117" y1="279.97" y2="279.97"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="121" y1="278.97" y2="286.97"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="115" y1="235.15" y2="227.15"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="127" y1="235.15" y2="227.15"/><line style="stroke:#A80036;stroke-width:1.0;" x1="121" x2="121" y1="235.15" y2="227.15"/><ellipse cx="121" cy="241.15" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;fill:none;"/><!--MD5=[031f0878a33f5d2e41f78e9befa7f4d4]
+link CookingBook to User_CookingBook--><path codeLine="54" d="M161,101.15 C161,101.15 161,144.9 161,144.9 " fill="none" id="CookingBook-User_CookingBook" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="161" x2="167" y1="144.9" y2="152.9"/><line style="stroke:#A80036;stroke-width:1.0;" x1="161" x2="155" y1="144.9" y2="152.9"/><line style="stroke:#A80036;stroke-width:1.0;" x1="161" x2="161" y1="144.9" y2="152.9"/><line style="stroke:#A80036;stroke-width:1.0;" x1="165" x2="157" y1="142.9" y2="142.9"/><line style="stroke:#A80036;stroke-width:1.0;" x1="157" x2="165" y1="97.15" y2="97.15"/><line style="stroke:#A80036;stroke-width:1.0;" x1="157" x2="165" y1="100.15" y2="100.15"/><line style="stroke:#A80036;stroke-width:1.0;" x1="161" x2="161" y1="101.15" y2="93.15"/><!--MD5=[463494c586a12fa0e5fc5e64255093b3]
+link Recipe to Recipe_CookingBook--><path codeLine="55" d="M186,553.06 C186,553.06 186,602.84 186,602.84 " fill="none" id="Recipe-Recipe_CookingBook" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="186" x2="192" y1="602.84" y2="610.84"/><line style="stroke:#A80036;stroke-width:1.0;" x1="186" x2="180" y1="602.84" y2="610.84"/><line style="stroke:#A80036;stroke-width:1.0;" x1="186" x2="186" y1="602.84" y2="610.84"/><ellipse cx="186" cy="596.84" rx="4" ry="4" style="stroke:#A80036;stroke-width:1.0;fill:none;"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="182" x2="190" y1="549.06" y2="549.06"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="182" x2="190" y1="552.06" y2="552.06"/><line style="stroke:#A80036;stroke-width:1.0;fill:none;" x1="186" x2="186" y1="553.06" y2="545.06"/><!--MD5=[72166f445a51273c46748cf1154d2a4b]
+link CookingBook to Recipe_CookingBook--><path codeLine="56" d="M232.5,101.01 C232.5,101.01 232.5,602.83 232.5,602.83 " fill="none" id="CookingBook-Recipe_CookingBook" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="232.5" x2="238.5" y1="602.83" y2="610.83"/><line style="stroke:#A80036;stroke-width:1.0;" x1="232.5" x2="226.5" y1="602.83" y2="610.83"/><line style="stroke:#A80036;stroke-width:1.0;" x1="232.5" x2="232.5" y1="602.83" y2="610.83"/><line style="stroke:#A80036;stroke-width:1.0;" x1="236.5" x2="228.5" y1="600.83" y2="600.83"/><line style="stroke:#A80036;stroke-width:1.0;" x1="228.5" x2="236.5" y1="97.01" y2="97.01"/><line style="stroke:#A80036;stroke-width:1.0;" x1="228.5" x2="236.5" y1="100.01" y2="100.01"/><line style="stroke:#A80036;stroke-width:1.0;" x1="232.5" x2="232.5" y1="101.01" y2="93.01"/><!--MD5=[1828cfeec08c2740050b2d144b591393]
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+!define primary_key(x) <b><color:#b8861b><&key></color> x</b>
+!define foreign_key(x) <color:#aaaaaa><&key></color> x
+!define column(x) <color:#efefef><&media-record></color> x
+!define table(x) entity x << (T, white) >>
+
+table( User ) {
+    primary_key(id) : varchar
+    column(username) : varchar
+    column(password) : varchar
+}
+
+table( Recipe ) {
+    primary_key(id) : varchar
+    foreign_key(user_id) : varchar
+    column(title) : varchar
+    column(ingredients) : varchar
+    column(preparations) : varchar
+}
+
+table( FoodImage ) {
+    primary_key(id) : varchar
+    foreign_key(recipe_id) : varchar
+    column(image) : bytea
+}
+
+table( CookingBook ) {
+    primary_key(id): varchar
+    column(name) : varchar
+    column(description) : varchar
+}
+
+table(User_CookingBook){
+    foreign_key(user_id): varchar
+    foreign_key( cookingbook_id ) : varchar
+}
+
+table(Recipe_CookingBook){
+    foreign_key(recipe_id): varchar
+    foreign_key(cookingbook_id) : varchar
+}
+
+User ||- -o{ Recipe
+Recipe ||- -o| FoodImage
+User ||-u-o{ User_CookingBook
+CookingBook ||- -|{ User_CookingBook
+Recipe ||- -o{ Recipe_CookingBook
+CookingBook ||- -|{ Recipe_CookingBook
+
+@enduml
+
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+
+entity User << (T, white) >> {
+    <b><color:#b8861b><&key></color> id</b> : varchar
+    <color:#efefef><&media-record></color> username : varchar
+    <color:#efefef><&media-record></color> password : varchar
+}
+
+entity Recipe << (T, white) >> {
+    <b><color:#b8861b><&key></color> id</b> : varchar
+    <color:#aaaaaa><&key></color> user_id : varchar
+    <color:#efefef><&media-record></color> title : varchar
+    <color:#efefef><&media-record></color> ingredients : varchar
+    <color:#efefef><&media-record></color> preparations : varchar
+}
+
+entity FoodImage << (T, white) >> {
+    <b><color:#b8861b><&key></color> id</b> : varchar
+    <color:#aaaaaa><&key></color> recipe_id : varchar
+    <color:#efefef><&media-record></color> image : bytea
+}
+
+entity CookingBook << (T, white) >> {
+    <b><color:#b8861b><&key></color> id</b>: varchar
+    <color:#efefef><&media-record></color> name : varchar
+    <color:#efefef><&media-record></color> description : varchar
+}
+
+entity User_CookingBook << (T, white) >>{
+    <color:#aaaaaa><&key></color> user_id: varchar
+    <color:#aaaaaa><&key></color> cookingbook_id : varchar
+}
+
+entity Recipe_CookingBook << (T, white) >>{
+    <color:#aaaaaa><&key></color> recipe_id: varchar
+    <color:#aaaaaa><&key></color> cookingbook_id : varchar
+}
+
+User ||- -o{ Recipe
+Recipe ||- -o| FoodImage
+User ||-u-o{ User_CookingBook
+CookingBook ||- -|{ User_CookingBook
+Recipe ||- -o{ Recipe_CookingBook
+CookingBook ||- -|{ Recipe_CookingBook
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

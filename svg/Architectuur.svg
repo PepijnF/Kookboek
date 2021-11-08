@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="549px" preserveAspectRatio="none" style="width:633px;height:549px;background:#FFFFFF;" version="1.1" viewBox="0 0 633 549" width="633px" zoomAndPan="magnify"><defs><filter height="300%" id="f7z4soj6h7x1u" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[529bd23faf390e7ceebc28d276bace7f]
+cluster LogicLayer--><polygon fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" points="33,6,125,6,132,28.2969,616,28.2969,616,207,33,207,33,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="33" x2="132" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="86" x="37" y="20.9951">LogicLayer</text><!--MD5=[ac8bce162a6e9aebb7bf893e79a5fa67]
+cluster AbstractionLayer--><polygon fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" points="16,231,158,231,165,253.2969,491,253.2969,491,381,16,381,16,231" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="165" y1="253.2969" y2="253.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="136" x="20" y="245.9951">AbstractionLayer</text><!--MD5=[b3eeb5d98d3988569c92a94d7c2ea02d]
+cluster DataLayer--><polygon fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" points="135,405,222,405,229,427.2969,437,427.2969,437,542,135,542,135,405" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="135" x2="229" y1="427.2969" y2="427.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="81" x="139" y="419.9951">DataLayer</text><!--MD5=[e84758e3c63f7940b5bba305527ac989]
+class RecipeContainer--><rect codeLine="13" fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" height="99.2188" id="RecipeContainer" style="stroke:#2688D4;stroke-width:1.5;" width="200" x="49" y="66.5"/><ellipse cx="95.75" cy="82.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M98.2188,88.375 Q97.6406,88.6875 97,88.8438 Q96.3594,89 95.6563,89 Q93.1563,89 91.8281,87.3281 Q90.5156,85.6563 90.5156,82.5 Q90.5156,79.3438 91.8281,77.6719 Q93.1563,76 95.6563,76 Q96.3594,76 97,76.1563 Q97.6563,76.3125 98.2188,76.625 L98.2188,79.4219 Q97.5938,78.8594 97,78.5938 Q96.4063,78.3125 95.7813,78.3125 Q94.4375,78.3125 93.75,79.375 Q93.0625,80.4375 93.0625,82.5 Q93.0625,84.5781 93.75,85.6406 Q94.4375,86.6875 95.7813,86.6875 Q96.4063,86.6875 97,86.4219 Q97.5938,86.1563 98.2188,85.5781 L98.2188,88.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="98" x="116.25" y="86.6543">RecipeContainer</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="50" x2="248" y1="98.5" y2="98.5"/><line style="stroke:#2688D4;stroke-width:1.5;" x1="50" x2="248" y1="106.5" y2="106.5"/><ellipse cx="60" cy="117.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="69" y="120.7104">FindAllByUserId(string userId)</text><ellipse cx="60" cy="130.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="137" x="69" y="133.5151">FindById(string recipeId)</text><ellipse cx="60" cy="143.1094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="149" x="69" y="146.3198">AddRecipe(recipe: Recipe)</text><ellipse cx="60" cy="155.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="174" x="69" y="159.1245">RemoveRecipe(recipe: Recipe)</text><!--MD5=[20418cb98520644da1e87dc0310aa74a]
+class Recipe--><rect codeLine="20" fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" height="150.4375" id="Recipe" style="stroke:#2688D4;stroke-width:1.5;" width="315" x="284.5" y="41"/><ellipse cx="417.75" cy="57" fill="#ADD1B2" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M420.2188,62.875 Q419.6406,63.1875 419,63.3438 Q418.3594,63.5 417.6563,63.5 Q415.1563,63.5 413.8281,61.8281 Q412.5156,60.1563 412.5156,57 Q412.5156,53.8438 413.8281,52.1719 Q415.1563,50.5 417.6563,50.5 Q418.3594,50.5 419,50.6563 Q419.6563,50.8125 420.2188,51.125 L420.2188,53.9219 Q419.5938,53.3594 419,53.0938 Q418.4063,52.8125 417.7813,52.8125 Q416.4375,52.8125 415.75,53.875 Q415.0625,54.9375 415.0625,57 Q415.0625,59.0781 415.75,60.1406 Q416.4375,61.1875 417.7813,61.1875 Q418.4063,61.1875 419,60.9219 Q419.5938,60.6563 420.2188,60.0781 L420.2188,62.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40" x="438.25" y="61.1543">Recipe</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="285.5" x2="598.5" y1="73" y2="73"/><ellipse cx="295.5" cy="84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="304.5" y="87.2104">Id: string</text><ellipse cx="295.5" cy="96.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="76" x="304.5" y="100.0151">UserId: string</text><ellipse cx="295.5" cy="109.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="304.5" y="112.8198">Title: string</text><ellipse cx="295.5" cy="122.4141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="304.5" y="125.6245">FoodImage: FoodImage</text><ellipse cx="295.5" cy="135.2188" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="304.5" y="138.4292">Preparations: string</text><ellipse cx="295.5" cy="148.0234" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="304.5" y="151.2339">Ingredients: string</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="285.5" x2="598.5" y1="157.8281" y2="157.8281"/><ellipse cx="295.5" cy="168.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="304.5" y="172.0386">Update()</text><ellipse cx="295.5" cy="181.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="289" x="304.5" y="184.8433">Recipe(recipeDto: RecipeDto, imageDto: ImageDto)</text><!--MD5=[b63ea12a7f46f2b9b6a8627e742001bc]
+class RecipeDto--><rect codeLine="34" fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" height="99.2188" id="RecipeDto" style="stroke:#2688D4;stroke-width:1.5;" width="138" x="337" y="266"/><ellipse cx="372.25" cy="282" fill="#FFFFFF" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M371.4844,282.7031 Q369.625,282 368.9688,281.2188 Q368.3281,280.4375 368.3281,279.125 Q368.3281,277.4375 369.4063,276.4688 Q370.4844,275.5 372.3594,275.5 Q373.2188,275.5 374.0625,275.7188 Q374.9219,275.9219 375.7656,276.3125 L375.7656,278.7656 Q374.9844,278.2188 374.1563,277.9375 Q373.3438,277.6406 372.5469,277.6406 Q371.6719,277.6406 371.1875,278 Q370.7188,278.3594 370.7188,279.0156 Q370.7188,279.5313 371.0625,279.875 Q371.4063,280.2031 372.5,280.6094 L373.5625,281.0156 Q375.0469,281.5625 375.75,282.4844 Q376.4688,283.3906 376.4688,284.7656 Q376.4688,286.6563 375.3594,287.5781 Q374.25,288.5 372,288.5 Q371.0781,288.5 370.1563,288.2656 Q369.2344,288.0313 368.375,287.5781 L368.375,285.0156 Q369.3438,285.7031 370.2656,286.0469 Q371.1875,286.375 372.0781,286.375 Q372.9844,286.375 373.4844,285.9688 Q373.9844,285.5469 373.9844,284.8125 Q373.9844,284.25 373.6406,283.8281 Q373.3125,283.4063 372.6875,283.1719 L371.4844,282.7031 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="390.75" y="286.1543">RecipeDto</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="338" x2="474" y1="298" y2="298"/><ellipse cx="348" cy="309" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="357" y="312.2104">Id: string</text><ellipse cx="348" cy="321.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="357" y="325.0151">Title: string</text><ellipse cx="348" cy="334.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="357" y="337.8198">Preparations: string</text><ellipse cx="348" cy="347.4141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="357" y="350.6245">Ingredients: string</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="338" x2="474" y1="357.2188" y2="357.2188"/><!--MD5=[d32d2927f30cd075f415c4e185226248]
+class IRecipeDal--><rect codeLine="41" fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" height="86.4141" id="IRecipeDal" style="stroke:#2688D4;stroke-width:1.5;" width="270" x="32" y="272.5"/><ellipse cx="131.25" cy="288.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M127.6719,284.2813 L127.6719,282 L135.0625,282 L135.0625,284.2813 L132.5938,284.2813 L132.5938,292.7344 L135.0625,292.7344 L135.0625,295 L127.6719,295 L127.6719,292.7344 L130.1406,292.7344 L130.1406,284.2813 L127.6719,284.2813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="63" x="151.75" y="292.6543">IRecipeDal</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="33" x2="301" y1="304.5" y2="304.5"/><line style="stroke:#2688D4;stroke-width:1.5;" x1="33" x2="301" y1="312.5" y2="312.5"/><ellipse cx="43" cy="323.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="52" y="326.7104">Save(recipeDto: RecipeDto)</text><ellipse cx="43" cy="336.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="52" y="339.5151">FindAllByUserId(userId: string): RecipeDto[]</text><ellipse cx="43" cy="349.1094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="206" x="52" y="352.3198">FindById(recipeId: string): RecipeDto</text><!--MD5=[880b32c8aa3db88bfaec1dd3f7b57aab]
+class RecipeDal--><rect codeLine="49" fill="#FFFFFF" filter="url(#f7z4soj6h7x1u)" height="86.4141" id="RecipeDal" style="stroke:#2688D4;stroke-width:1.5;" width="270" x="151" y="440"/><ellipse cx="252.25" cy="456" fill="#ADD1B2" rx="11" ry="11" style="stroke:#2688D4;stroke-width:1.0;"/><path d="M254.7188,461.875 Q254.1406,462.1875 253.5,462.3438 Q252.8594,462.5 252.1563,462.5 Q249.6563,462.5 248.3281,460.8281 Q247.0156,459.1563 247.0156,456 Q247.0156,452.8438 248.3281,451.1719 Q249.6563,449.5 252.1563,449.5 Q252.8594,449.5 253.5,449.6563 Q254.1563,449.8125 254.7188,450.125 L254.7188,452.9219 Q254.0938,452.3594 253.5,452.0938 Q252.9063,451.8125 252.2813,451.8125 Q250.9375,451.8125 250.25,452.875 Q249.5625,453.9375 249.5625,456 Q249.5625,458.0781 250.25,459.1406 Q250.9375,460.1875 252.2813,460.1875 Q252.9063,460.1875 253.5,459.9219 Q254.0938,459.6563 254.7188,459.0781 L254.7188,461.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="272.75" y="460.1543">RecipeDal</text><line style="stroke:#2688D4;stroke-width:1.5;" x1="152" x2="420" y1="472" y2="472"/><line style="stroke:#2688D4;stroke-width:1.5;" x1="152" x2="420" y1="480" y2="480"/><ellipse cx="162" cy="491" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="155" x="171" y="494.2104">Save(recipeDto: RecipeDto)</text><ellipse cx="162" cy="503.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="171" y="507.0151">FindAllByUserId(userId: string): RecipeDto[]</text><ellipse cx="162" cy="516.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="206" x="171" y="519.8198">FindById(recipeId: string): RecipeDto</text><!--MD5=[e5da9600ad2bbd4e8285f4ef03b49d88]
+reverse link IRecipeDal to RecipeDal--><path codeLine="57" d="M226.5,378.64 C226.5,378.64 226.5,439.72 226.5,439.72 " fill="none" id="IRecipeDal-backto-RecipeDal" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="219.5,378.64,226.5,358.64,233.5,378.64,219.5,378.64" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9059c252cb0ef76925e1287355a7c02a]
+link RecipeContainer to Recipe--><path codeLine="58" d="M249.01,116 C249.01,116 279.28,116 279.28,116 " fill="none" id="RecipeContainer-to-Recipe" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="284.28,116,275.28,112,279.28,116,275.28,120,284.28,116" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="269.4709" y="112.6962">*</text><!--MD5=[673283271bda6f715db073286596007d]
+link Recipe to RecipeDto--><path codeLine="60" d="M429,191.14 C429,191.14 429,260.81 429,260.81 " fill="none" id="Recipe-to-RecipeDto" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="429,265.81,433,256.81,429,260.81,425,256.81,429,265.81" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="398" y="222.0369">uses</text><!--MD5=[c9b53d3a366c3eb770e8ef9229d1a3cf]
+reverse link RecipeDto to RecipeContainer--><path codeLine="61" d="M383,260.93 C383,260.93 383,229 383,229 C383,229 182.33,229 182.33,229 C182.33,229 182.33,195.93 182.33,165.56 " fill="none" id="RecipeDto-backto-RecipeContainer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="383,265.93,387,256.93,383,260.93,379,256.93,383,265.93" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="235.92" y="225.0669">uses</text><!--MD5=[867a53314041eaa69e53fef16489fc17]
+reverse link RecipeDto to RecipeDal--><path codeLine="62" d="M379,370.3 C379,370.3 379,439.91 379,439.91 " fill="none" id="RecipeDto-backto-RecipeDal" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="379,365.3,375,374.3,379,370.3,383,374.3,379,365.3" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="348" y="401.1769">uses</text><!--MD5=[49c360a4ef998b6d0eb5b2cdd9e055b5]
+link Recipe to IRecipeDal--><path codeLine="64" d="M293.25,191.14 C293.25,191.14 293.25,267.25 293.25,267.25 " fill="none" id="Recipe-to-IRecipeDal" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="293.25,272.25,297.25,263.25,293.25,267.25,289.25,263.25,293.25,272.25" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1ea10b0f80d6d84e211d808eb2f6305c]
+link RecipeContainer to IRecipeDal--><path codeLine="65" d="M115.67,165.57 C115.67,165.57 115.67,267.28 115.67,267.28 " fill="none" id="RecipeContainer-to-IRecipeDal" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="115.67,272.28,119.67,263.28,115.67,267.28,111.67,263.28,115.67,272.28" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[60ff9b855a6756fd0d6a438b017c3a13]
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+!define struct(x) entity x << (S, white) >>
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+package LogicLayer {
+    class RecipeContainer {
+        + FindAllByUserId(string userId)
+        + FindById(string recipeId)
+        + AddRecipe(recipe: Recipe)
+        + RemoveRecipe(recipe: Recipe)
+    }
+    
+    class Recipe {
+        + Id: string
+        + UserId: string
+        + Title: string
+        + FoodImage: FoodImage
+        + Preparations: string
+        + Ingredients: string
+        
+        + Update()
+        + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
+    }
+}
+
+package AbstractionLayer {
+     struct(RecipeDto){
+        + Id: string
+        + Title: string
+        + Preparations: string
+        + Ingredients: string
+    }
+    
+    interface IRecipeDal{
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+package DataLayer {
+    class RecipeDal {
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+
+RecipeDal .u.|> IRecipeDal
+RecipeContainer -r-> "*" Recipe
+
+Recipe .r.> RecipeDto : uses
+RecipeContainer .u.> RecipeDto : uses
+RecipeDal .u.> RecipeDto : uses
+
+Recipe -d-> IRecipeDal
+RecipeContainer -d-> IRecipeDal
+
+@enduml
+
+@startuml
+skinparam linetype ortho
+skinparam shadowing true
+skinparam handwritten false
+
+
+skinparam class {
+    BackgroundColor white
+    BorderColor #2688d4
+}
+
+package LogicLayer {
+    class RecipeContainer {
+        + FindAllByUserId(string userId)
+        + FindById(string recipeId)
+        + AddRecipe(recipe: Recipe)
+        + RemoveRecipe(recipe: Recipe)
+    }
+    
+    class Recipe {
+        + Id: string
+        + UserId: string
+        + Title: string
+        + FoodImage: FoodImage
+        + Preparations: string
+        + Ingredients: string
+        
+        + Update()
+        + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
+    }
+}
+
+package AbstractionLayer {
+     entity RecipeDto << (S, white) >>{
+        + Id: string
+        + Title: string
+        + Preparations: string
+        + Ingredients: string
+    }
+    
+    interface IRecipeDal{
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+package DataLayer {
+    class RecipeDal {
+        + Save(recipeDto: RecipeDto)
+        + FindAllByUserId(userId: string): RecipeDto[]
+        + FindById(recipeId: string): RecipeDto
+    }
+}
+
+
+RecipeDal .u.|> IRecipeDal
+RecipeContainer -r-> "*" Recipe
+
+Recipe .r.> RecipeDto : uses
+RecipeContainer .u.> RecipeDto : uses
+RecipeDal .u.> RecipeDto : uses
+
+Recipe -d-> IRecipeDal
+RecipeContainer -d-> IRecipeDal
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
