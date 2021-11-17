@@ -1,6 +1,6 @@
 namespace TestingLayer
 {
-    public class TestUser
+    public class TestRecipe
     {
         
     }
