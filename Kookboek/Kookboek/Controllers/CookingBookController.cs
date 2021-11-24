@@ -145,7 +145,7 @@ namespace Kookboek.Controllers
                    ImageBase64 = recipe.FoodImage.Base64Image(),
                    Ingredients = recipe.Ingredients,
                    Title = recipe.Title,
-                   Preparation = recipe.Title
+                   Preparation = recipe.Preparations
                }); 
             }
             

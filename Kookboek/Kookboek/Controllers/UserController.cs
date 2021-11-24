@@ -64,6 +64,12 @@ namespace Kookboek.Controllers
                 // TODO Username already exists
             }
 
+            User user = _userContainer.FindByUsername(userModel.Username);
+            
+            var session = HttpContext.Session;
+            session.Set("user_id", Encoding.ASCII.GetBytes(user.Id));
+            session.Set("Username", Encoding.ASCII.GetBytes(user.Username));
+
             return RedirectToAction("Index", "Home");
         }
 

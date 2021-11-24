@@ -13,13 +13,14 @@
             @foreach (var recipeModel in Model.RecipeModels)
             {
                 <article class="blog-post">
-                    <img src="data:image;base64,@recipeModel.ImageBase64" />
+                    <img src="data:image;base64,@recipeModel.ImageBase64" width="auto" height="300px"/>
                     <h2 class="blog-post-title">@recipeModel.Title</h2>
                     
-                    <p>@recipeModel.Ingredients</p>
+                    @Html.Raw("<p>" + @recipeModel.Ingredients.Replace("\n", "<br/>") + "</p>")
                     <hr>
-                    <p>@recipeModel.Preparation</p>
+                    @Html.Raw("<p>" + @recipeModel.Preparation.Replace("\n", "<br/>") + "</p>")
                 </article>
+                <br/><br/>
             }
         </div>
     </div>

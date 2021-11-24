@@ -13,7 +13,7 @@
                         <img class="card-img-top" src=data:image;base64,@Model.ElementAt(column).ImageBase64 alt="Card image cap" width="auto" height="300px">
                         <div class="card-body">
                             <h5 class="card-title">@Model.ElementAt(column).Title</h5>
-                            <p class="card-text">@Model.ElementAt(column).Preparation</p>
+                            <!-- <p class="card-text">@Model.ElementAt(column).Preparation</p> -->
                             @Html.ActionLink("Show Recipe", "ShowRecipe", "Recipe", new {id=@Model.ElementAt(column).Id},new {@class="btn btn-primary"})
                         </div>
                     </div>

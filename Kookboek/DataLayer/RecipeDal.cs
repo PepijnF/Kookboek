@@ -127,8 +127,8 @@ namespace DataLayer
                         {
                             Id = npgsqlDataReader.GetString(0),
                             Title = npgsqlDataReader.GetString(1),
-                            Ingredients = npgsqlDataReader.GetString(3),
-                            Preparation = npgsqlDataReader.GetString(2),
+                            Ingredients = npgsqlDataReader.GetString(2),
+                            Preparation = npgsqlDataReader.GetString(3),
                             OwnerId = npgsqlDataReader.GetString(4)    
                         });
                     }
@@ -160,8 +160,8 @@ namespace DataLayer
                         {
                             Id = npgsqlDataReader.GetString(0),
                             Title = npgsqlDataReader.GetString(1),
-                            Ingredients = npgsqlDataReader.GetString(3),
-                            Preparation = npgsqlDataReader.GetString(2),
+                            Ingredients = npgsqlDataReader.GetString(2),
+                            Preparation = npgsqlDataReader.GetString(3),
                             OwnerId = npgsqlDataReader.GetString(4)
                         });
                     }

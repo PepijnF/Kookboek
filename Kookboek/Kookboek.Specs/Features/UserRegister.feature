@@ -1,5 +1,5 @@
 Feature: UserRegister
-	Simple calculator for adding two numbers
+	The user can create a new account
 
 @mytag
 Scenario: The actor can register an account

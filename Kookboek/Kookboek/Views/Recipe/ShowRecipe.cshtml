@@ -3,10 +3,10 @@
 <a href="@Url.ActionLink("EditRecipe", "Recipe", new {recipeId=@Model.Id})">Edit</a>
 
 <article class="blog-post">
-    <img src="data:image;base64,@Model.ImageBase64" />
+    <img src="data:image;base64,@Model.ImageBase64" width="auto" height="300px" />
     <h2 class="blog-post-title">@Model.Title</h2>
 
-    <p>@Model.Ingredients</p>
+    @Html.Raw("<p>" + @Model.Ingredients.Replace("\n", "<br/>") + "</p>")
     <hr>
-    <p>@Model.Preparation</p>
+    @Html.Raw("<p>" + @Model.Preparation.Replace("\n", "<br/>") + "</p>")
 </article>
