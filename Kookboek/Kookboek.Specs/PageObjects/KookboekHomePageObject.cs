@@ -6,7 +6,7 @@ namespace Kookboek.Specs.PageObjects
 {
     public class KookboekHomePageObject
     {
-        private const string KookboekUrl = "https://localhost:5001/";
+        private const string KookboekUrl = "http://localhost:8080/";
 
         private IWebDriver _webDriver;
         public const int DefaultWaitInSeconds = 5;

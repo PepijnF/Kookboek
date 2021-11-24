@@ -8,7 +8,7 @@ namespace Kookboek.Specs.PageObjects
     public class KookboekLoginPageObject
     {
         
-        private const string KookboekUrl = "https://localhost:5001/User/Login";
+        private const string KookboekUrl = "http://localhost:8080/User/Login";
 
         private IWebDriver _webDriver;
         public const int DefaultWaitInSeconds = 5;

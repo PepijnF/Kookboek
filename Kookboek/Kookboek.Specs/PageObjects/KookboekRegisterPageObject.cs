@@ -6,7 +6,7 @@ namespace Kookboek.Specs.PageObjects
     public class KookboekRegisterPageObject
     {
         
-        private const string KookboekUrl = "https://localhost:5001/User/Register";
+        private const string KookboekUrl = "http://localhost:8080/User/Register";
 
         private IWebDriver _webDriver;
         public const int DefaultWaitInSeconds = 5;
