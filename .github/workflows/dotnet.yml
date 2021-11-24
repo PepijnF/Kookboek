@@ -37,10 +37,8 @@ jobs:
       run: dotnet tool install --tool-path /usr/local/bin SpecFlow.Plus.LivingDoc.CLI
     - name: Build
       run: dotnet build --no-restore Kookboek/Kookboek.sln
-  test:
     - name: Test
       run: dotnet test --no-build --verbosity normal Kookboek/Kookboek.sln
-  update:
     - name: Update website
       run: livingdoc test-assembly Kookboek/Kookboek.Specs/bin/Debug/net5.0/Kookboek.Specs.dll -t Kookboek/Kookboek.Specs/bin/Debug/net5.0/TestExecution.json --output docs/index.html
     - name: Commit pages update
