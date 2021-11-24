@@ -39,14 +39,14 @@ jobs:
       run: dotnet build --no-restore Kookboek/Kookboek.sln
 
   test:
-    runs-on: ubuntu-latest
     needs: build
+    steps:
 
     - name: Test
       run: dotnet test --no-build --verbosity normal Kookboek/Kookboek.sln
   updater:
-    runs-on: ubuntu-latest
     needs: [build, test]
+    steps:
     - name: Update website
       run: livingdoc test-assembly Kookboek/Kookboek.Specs/bin/Debug/net5.0/Kookboek.Specs.dll -t Kookboek/Kookboek.Specs/bin/Debug/net5.0/TestExecution.json --output docs/index.html
     - name: Commit pages update
