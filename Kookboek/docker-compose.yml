@@ -1,0 +1,14 @@
+version: "2.1.1"
+services:
+  database:
+    build:
+      dockerfile: ./Dockerfile.db
+    ports:
+      - "5432:5432"
+  web:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:80"
+
+

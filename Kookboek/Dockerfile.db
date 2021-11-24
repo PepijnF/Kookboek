@@ -1,0 +1,9 @@
+FROM postgres:latest AS base
+EXPOSE 5432
+
+
+FROM postgres:latest AS build
+ENV POSTGRES_USER=appuser
+ENV POSTGRES_PASSWORD=1234
+COPY ["dump.sql", "docker-entrypoint-initdb.d/"]
+
