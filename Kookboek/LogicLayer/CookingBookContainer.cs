@@ -5,8 +5,8 @@ namespace LogicLayer
 {
     public class CookingBookContainer
     {
-        private RecipeContainer _recipeContainer;
-        private ICookingBookDal _cookingBookDal;
+        private readonly RecipeContainer _recipeContainer;
+        private readonly ICookingBookDal _cookingBookDal;
         private List<CookingBook> _cookingBooks = new List<CookingBook>();
 
         public CookingBookContainer(RecipeContainer recipeContainer, ICookingBookDal cookingBookDal)

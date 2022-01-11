@@ -8,7 +8,7 @@ namespace LogicLayer
         private IRecipeDal _recipeDal { get; set; }
         // TODO Check solid 
         private IFoodImageDal _foodImageDal { get; set; }
-        private List<Recipe> _recipes = new List<Recipe>();
+        private readonly List<Recipe> _recipes = new List<Recipe>();
 
         public void AddRecipe(Recipe recipe)
         {

@@ -7,10 +7,10 @@ namespace LogicLayer
 {
     public class User
     {
-        public string Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public List<Recipe> Recipes { get; set; }
+        public string Id { get; init; }
+        public string Username { get; init; }
+        public string Password { get; init; }
+        public List<Recipe> Recipes { get; init; }
         public List<CookingBook> CookingBooks { get; set; }
 
         public void AddRecipe(Recipe recipe)

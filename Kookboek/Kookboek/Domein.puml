@@ -4,20 +4,19 @@ skinparam shadowing true
 skinparam handwritten false
 
 skinparam class {
-    BackgroundColor white
-    BorderColor #2688d4
+    BorderColor black
 }
 
 class User {
     + Id: string
     + Username: string
+    + Password: string
     + Recipes: Recipe[]
     + CookingBooks: CookingBook[]
     
     + AddRecipe(recipe: Recipe)
-    + Update()
     + User(userDto: UserDto)
-    + Save()
+    + Save(IUserDal userDal, IRecipeDal recipeDal, IFoodImageDal foodImageDal)
     + User(username: string)
 }
 
@@ -26,6 +25,7 @@ class UserContainer {
     + RemoveUser(user: User)
     + FindByUsername(username: string)
     + FindById(userId: string)
+    + GetAll(): User[]
 }
 
 class Recipe {
@@ -36,11 +36,15 @@ class Recipe {
     + Preparations: string
     + Ingredients: string
     
-    + Update()
+    + Save(IRecipeDal recipeDal, IFoodImageDal foodImageDal)
     + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
 }
 
 class RecipeContainer {
+    + EditRecipe(Recipe recipe)
+    + FindAllByCookingBookId(string cookingBookId)
+    + FindAllByUserId(string userId)
+    + FindById(string recipeId)
     + AddRecipe(recipe: Recipe)
     + RemoveRecipe(recipe: Recipe)
 }
@@ -50,22 +54,32 @@ class FoodImage {
     + Image: byte[]
     + RecipeId: string
     
-    + Update()
+    + Save(IFoodImageDal foodImageDal)
+    + FindByRecipeId(string recipeId, IFoodImageDal foodImageDal): FoodImage
+    + Base64Image(): string
     + Image(imageDto: ImageDto)
 }
 
 class CookingBook {
     + Id: string
+    + OwnerId: string
     + Name: string
     + Description: string
     + Recipes: Recipe[]
     
     + AddRecipe(recipe: Recipe)
+    + Save()
+}
+
+class CookingBookContainer {
+    + GetAllByUserId(string userId): CookingBook[]
+    + FindById(string cookingBookId): CookingBook
 }
 
 UserContainer --> "*" User : Users
 RecipeContainer --> "*" Recipe : Recipes
 User "1" --> "*" Recipe
+CookingBookContainer --> "*" CookingBook: CookingBooks
 User "*" --> "*" CookingBook
 Recipe "1" --> "1" FoodImage
 @enduml

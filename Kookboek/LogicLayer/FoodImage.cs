@@ -6,9 +6,9 @@ namespace LogicLayer
 {
     public class FoodImage
     {
-        public string Id { get; set; }
-        public string RecipeId { get; set; }
-        public byte[] Image { get; set; }
+        public string Id { get; init; }
+        public string RecipeId { get; init; }
+        public byte[] Image { get; init; }
 
         public void Save(IFoodImageDal foodImageDal)
         {

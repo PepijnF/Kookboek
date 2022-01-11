@@ -4,11 +4,11 @@ namespace LogicLayer
 {
     public class Recipe
     {
-        public string Id { get; set; }
-        public string UserId { get; set; }
-        public string Title { get; set; }
-        public string Preparations { get; set; }
-        public string Ingredients { get; set; }
+        public string Id { get; init; }
+        public string UserId { get; init; }
+        public string Title { get; init; }
+        public string Preparations { get; init; }
+        public string Ingredients { get; init; }
         public FoodImage FoodImage { get; set; }
 
         public void Save(IRecipeDal recipeDal, IFoodImageDal foodImageDal)

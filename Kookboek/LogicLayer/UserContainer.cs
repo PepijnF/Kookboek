@@ -5,11 +5,11 @@ namespace LogicLayer
 {
     public class UserContainer
     {
-        private IUserDal _userDal;
+        private readonly IUserDal _userDal;
         // TODO Check solid
-        private IRecipeDal _recipeDal;
-        private IFoodImageDal _foodImageDal;
-        private List<User> _users = new List<User>();
+        private readonly IRecipeDal _recipeDal;
+        private readonly IFoodImageDal _foodImageDal;
+        private readonly List<User> _users = new List<User>();
 
         public void AddUser(User user)
         {

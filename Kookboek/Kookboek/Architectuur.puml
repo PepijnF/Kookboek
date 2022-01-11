@@ -12,6 +12,8 @@ skinparam class {
 
 package LogicLayer {
     class RecipeContainer {
+        + EditRecipe(Recipe recipe)
+        + FindAllByCookingBookId(string cookingBookId)
         + FindAllByUserId(string userId)
         + FindById(string recipeId)
         + AddRecipe(recipe: Recipe)
@@ -26,7 +28,7 @@ package LogicLayer {
         + Preparations: string
         + Ingredients: string
         
-        + Update()
+        + Save(IRecipeDal recipeDal, IFoodImageDal foodImageDal)
         + Recipe(recipeDto: RecipeDto, imageDto: ImageDto)
     }
 }
@@ -34,6 +36,7 @@ package LogicLayer {
 package AbstractionLayer {
      struct(RecipeDto){
         + Id: string
+        + OwnerId: string
         + Title: string
         + Preparations: string
         + Ingredients: string
@@ -43,6 +46,8 @@ package AbstractionLayer {
         + Save(recipeDto: RecipeDto)
         + FindAllByUserId(userId: string): RecipeDto[]
         + FindById(recipeId: string): RecipeDto
+        + GetAll(): RecipeDto[]
+        + GetAllByCookingBookId(string cookingBookId): RecipeDto[]
     }
 }
 
@@ -51,6 +56,8 @@ package DataLayer {
         + Save(recipeDto: RecipeDto)
         + FindAllByUserId(userId: string): RecipeDto[]
         + FindById(recipeId: string): RecipeDto
+        + GetAll(): RecipeDto[]
+        + GetAllByCookingBookId(string cookingBookId): RecipeDto[]
     }
 }
 
